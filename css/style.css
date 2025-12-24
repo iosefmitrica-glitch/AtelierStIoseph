@@ -1,0 +1,1220 @@
+:root {
+  /* Neues Logo oben (End_Logo.png) */
+  --brand-logo-height: 150px; /* Höhe vom Logo oben in der Mitte */
+  --brand-logo-y: 50px; /* Logo hoch/runter: negativ = hoch, positiv = runter */
+  
+  /* Weiße Leiste beim Scrollen */
+  --scroll-bar-height: 70px; /* Höhe der weißen Leiste beim Scrollen (z.B. 20px klein, 80px groß) */
+  
+  /* Über Mich Button */
+  --about-btn-y: 2wpx; /* Über Mich hoch/runter: negativ = hoch, positiv = runter */
+  --about-btn-x: 30px; /* Über Mich nach rechts/links: positiv = rechts, negativ = links */
+  --about-text-size: 16px; /* Schriftgröße von "Über Mich" Text */
+  
+  /* Kontakt Button */
+  --contact-btn-height: 32px; /* Höhe vom Kontakt Button */
+  --contact-text-size: 16px; /* Schriftgröße von "Kontakt" Text */
+  
+  /* Datenschutz Header Linie */
+  --privacy-header-padding: 100px; /* Abstand oben im Datenschutz Header (z.B. 80px weniger, 150px mehr) */
+  --privacy-back-btn-top: 80px; /* Zurück-Button Abstand von oben (z.B. 20px höher, 50px tiefer) */
+  --privacy-back-btn-left: 50px; /* Zurück-Button Abstand von links (z.B. 40px mehr rechts, 20px weniger) */
+  
+  /* Zurück-Button in weißer Leiste */
+  --privacy-scroll-back-top: 25px; /* Zurück in weißer Leiste: Abstand von oben (z.B. 25px für tiefer) */
+  --privacy-scroll-back-left: 50px; /* Zurück in weißer Leiste: Abstand von links (z.B. 50px für rechts) */
+
+  /* Logo-Steuerung (nur das Bild!) */
+  --logo-size: 300px; /* z.B. 90px größer, 40px kleiner */
+  --logo-x: -250px; /* Logo nach links/rechts: negativ = links (z.B. -40px), positiv = rechts (z.B. 20px) */
+
+  /* Titel "Atelier St. Ioseph" (nur der Text!) */
+  --title-x: -270px; /* Text nach links/rechts: negativ = links, positiv = rechts */
+  --title-y: 0px; /* Text nach oben/unten */
+
+  /* Navigation (Home, Über uns, ...) */
+  --nav-links-gap: 20px; /* Abstand zwischen den Links */
+  --nav-links-x: 0px; /* Ganze Link-Leiste nach links/rechts schieben (negativ/positiv) */
+  --nav-links-y: 0px; /* Ganze Link-Leiste nach oben/unten schieben */
+  --nav-link-font-size: 16px; /* Schriftgröße der Links */
+  --nav-link-pad-y: 10px; /* Innenabstand oben/unten */
+  --nav-link-pad-x: 15px; /* Innenabstand links/rechts */
+
+    /* NAV ALLE ZUSAMMEN (Home/Über uns/Services/Galerie/Kontakt) */
+    /* -> Damit kannst du ALLE 5 gleichzeitig verschieben & größer machen,
+      OHNE den Abstand (--nav-links-gap) anzufassen. */
+    --nav-all-x: 200px; /* Alle Links zusammen links/rechts */
+    --nav-all-y: 0px; /* Alle Links zusammen hoch/runter */
+    --nav-all-font-size: 20px; /* Alle Links zusammen größer/kleiner */
+    --nav-all-pad-y: 10px; /* Alle Links: Padding oben/unten */
+    --nav-all-pad-x: 15px; /* Alle Links: Padding links/rechts */
+
+  /* Einzelne Links (nur dieses Wort verschieben) */
+  --nav-home-x: 0px;
+  --nav-home-y: 0px;
+  --nav-about-x: 0px;
+  --nav-about-y: 0px;
+  --nav-services-x: 0px;
+  --nav-services-y: 0px;
+  --nav-gallery-x: 0px;
+  --nav-gallery-y: 0px;
+  --nav-contact-x: 0px;
+  --nav-contact-y: 0px;
+
+  /* Button "Entdecke mehr" */
+  --cta-font-size: 1.3em; /* Schriftgröße vom Button */
+  --cta-pad-y: 20px; /* Button-Padding oben/unten */
+  --cta-pad-x: 40px; /* Button-Padding links/rechts */
+  --cta-x: 0px; /* Button nach links/rechts schieben */
+  --cta-y: 0px; /* Button nach oben/unten schieben */
+
+  /* Hero-Steuerung */
+  --hero-height: 725px;
+  --hero-bg-position: center 40%;
+  
+  /* Menu Abstand zwischen Links */
+  --menu-link-spacing: 15px; /* Abstand zwischen Home, Über uns, Services, Galerie */
+  --hero-height: 200px;
+  --hero-bg-position: center 40%;
+}
+/* Glatte Scroll-Verhalten für die ganze Seite - macht das Scrollen sanft */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glatte Bewegung beim Scrollen - macht das Runterscrollen sanft, nicht ruckelig. Gut für schöne Bewegung. */
+html {
+  scroll-behavior: smooth; /* Ändere zu 'auto' für schnelles Springen, aber smooth ist besser. */
+}
+
+/* --- Kleine Steuerung (nur für den Seitenbesitzer) --- */
+.hero-controls {
+  position: fixed;
+  display: none !important; /* vorübergehend verbergen, entferne diese Zeile um wieder sichtbar zu machen */
+  right: 16px;
+  bottom: 16px;
+  width: 240px;
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  font-size: 13px;
+  z-index: 9999;
+}
+.hero-controls strong { display:block; margin-bottom:6px; }
+.hero-controls .control-row { margin-bottom:8px; }
+.hero-controls label { display:block; font-weight:600; margin-bottom:4px; }
+.hero-controls input[type=range] { width:100%; }
+.hero-controls .control-note { font-size:11px; color:#555; margin-top:6px; }
+
+@media (max-width:600px) {
+  .hero-controls { width:200px; right:10px; bottom:10px; font-size:12px; }
+}
+
+/* Grundstücke für die ganze Seite - Schriftart, Hintergrundfarbe, Textfarbe. Das beeinflusst alles. */
+body {
+  font-family: 'Ovo', serif; /* Ovo Schriftart */
+  margin: 0; /* Kein Rand außen - hält alles eng. */
+  padding: 0; /* Kein Rand innen - verhindert Leerraum. */
+  background: #f9f9f9; /* Heller grauer Hintergrund - ändere den Code, z.B. #ffffff für weiß oder #000000 für schwarz. */
+  color: #333; /* Dunkle Textfarbe für gutes Lesen - ändere zu #000 für schwarz oder #fff für weiß. */
+  line-height: 1.6; /* Abstand zwischen Textzeilen - erhöhe auf 2.0 für mehr Platz. */
+}
+
+/* Oberer Bereich der Seite - transparent, liegt über dem Hero-Bild */
+header {
+  background: transparent; /* Transparent - sitzt über dem Hero-Bild */
+  padding: 0; /* Kein Padding - vermeidet weißen Raum oben */
+  border-bottom: none; /* Keine Linie */
+  position: absolute; /* Absolute Positionierung über dem Hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Über dem Bild */
+}
+
+/* Navigationsleiste - oben, transparent, mit Hamburger + Logo + Kontakt */
+nav.top-nav {
+  display: flex;
+  justify-content: space-between; /* Hamburger links, Logo mittig, Kontakt rechts */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20; /* Über Hero */
+  background: transparent;
+  padding: 20px 30px;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Linke Seite: Hamburger + Über Mich */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 21;
+}
+
+/* Weiße Scroll-Leiste als echtes Element */
+.scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--scroll-bar-height);
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  z-index: 19;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+body.scrolled .scroll-bar {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Logo für Scroll-Leiste - versteckt standardmäßig */
+.scroll-logo {
+  display: none;
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, -20px);
+  height: calc(var(--scroll-bar-height) - 10px);
+  width: auto;
+  z-index: 22;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* Logo in der weißen Leiste beim Scrollen anzeigen */
+body.scrolled .scroll-logo {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Bei Scroll: Elemente farblich anpassen, Logo verschwindet */
+body.scrolled .menu-toggle span { background: #000; }
+body.scrolled .contact-text { color: #000; }
+body.scrolled .contact-icon { color: #000; }
+body.scrolled .brand-logo { display: none; }
+
+/* Hamburger Menu Button (☰) */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 21;
+  padding: 5px;
+}
+
+.menu-toggle span {
+  width: 32px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 0;
+  transition: 0.3s;
+}
+
+/* Über Mich Button (neben Menu) */
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: var(--about-text-size);
+  font-family: 'Ovo', serif;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  transform: translateY(var(--about-btn-y)) translateX(var(--about-btn-x));
+}
+
+.about-btn:hover {
+  opacity: 0.7;
+}
+
+.about-icon {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Bei Scroll: Über Mich Button Farben anpassen */
+body.scrolled .about-btn {
+  color: #000;
+}
+
+body.scrolled .about-icon {
+  color: #000;
+}
+
+body.scrolled .about-text {
+  color: #000;
+}
+
+/* Hamburger animieren wenn Menu offen */
+body.menu-open .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+body.menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+body.menu-open .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Kontakt Button (oben rechts) — gleiche Höhe wie Hamburger */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: var(--contact-btn-height);
+  line-height: var(--contact-btn-height);
+  padding: 0 6px;         /* kompakter Klickbereich */
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: var(--contact-text-size);
+  font-family: 'Ovo', serif;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
+  z-index: 21;
+}
+
+.contact-btn:hover { opacity: 0.7; }
+
+.contact-text { color: #fff; }
+
+.contact-icon {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Slide-Out Menu (weiß, links) */
+.slide-menu {
+  position: fixed;
+  left: -400px; /* Initially hidden */
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: #fff;
+  z-index: 100;
+  transition: left 0.4s ease;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.menu-open .slide-menu {
+  left: 0;
+}
+
+/* X Button - innerhalb des Menus */
+.menu-close {
+  background: #fff;
+  border: none;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer !important;
+  color: #333;
+  transition: 0.3s;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 101;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all !important;
+}
+
+.menu-close:hover {
+  color: #000;
+  background: #f5f5f5;
+}
+
+/* Bild neben dem X (oben rechts) */
+.menu-top-image {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  z-index: 101;
+}
+
+/* Menü Header (Logo) */
+.menu-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  border-bottom: 1px solid #eee;
+  margin-top: 50px;
+}
+
+.menu-logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Menü-Liste (Kategorien) */
+.menu-list {
+  list-style: none;
+  padding: 30px 0;
+  margin: 0;
+}
+
+.menu-list li {
+  margin: 0;
+  margin-bottom: var(--menu-link-spacing);
+}
+
+.menu-link {
+  display: block;
+  padding: 25px 40px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.menu-link:hover {
+  background: #ffffff;
+  color: #000;
+  border-left-color: #000;
+}
+
+/* Menü Footer - Kontakt Sektion (Steinway Stil) */
+.menu-footer {
+  border-top: 1px solid #f0f0f0;
+  padding: 30px 0;
+  margin-top: auto;
+  text-align: center;
+}
+
+.menu-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  padding: 15px 20px;
+}
+
+.menu-contact-link:hover {
+  color: #333;
+}
+
+/* Bild oben in der Menü-Liste */
+.menu-image-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-middle-image {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Menu Backdrop (dunkle Fläche) */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 18;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Kontakt-Ansicht: NUR den Haupt-Header (direkter Body-Header) & Hero-Controls ausblenden */
+body.contact-view > header,
+body.contact-view .hero-controls {
+  display: none !important;
+}
+
+body.menu-open .menu-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Alte nav ul verstecken */
+nav ul {
+  display: none !important;
+}
+
+/* Neues, zentriertes Logo oben (anstatt Text "Atelier St. Ioseph") */
+.brand-logo {
+  height: var(--brand-logo-height);
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(var(--brand-logo-y));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Titel in der Navigation - schöne Schrift, Größe, nach links geschoben. */
+nav h1 {
+  font-family: 'Alex Brush', cursive; /* Schöne Schriftart - ändere zu 'Arial' für normal. */
+  font-size: 2.5em; /* Größe des Titels - erhöhe auf 3em für größer. */
+  margin: 0; /* Kein Rand - verhindert Abstand. */
+  color: #333; /* Dunkle Farbe - ändere zu #fff für weiß. */
+  /* Nur den Text verschieben (Logo + Links bleiben gleich): */
+  transform: translate(var(--title-x), var(--title-y));
+}
+
+/* Logo in der Navigation - kleines Bild neben dem Titel */
+.logo {
+  height: var(--logo-size);
+  width: auto;
+  margin: 0 10px 0 0; /* Abstand rechts zum Namen */
+  /* Nur das Bild verschieben (ohne Layout zu ändern): */
+  transform: translateX(var(--logo-x, var(--logo-margin-left, -80px)));
+  transition: height 0.2s, transform 0.2s;
+}
+
+/* Liste der Links in der Navigation - keine Punkte, flexible Anordnung. */
+nav ul {
+  list-style: none;
+  display: none; /* Ausgeblendet - ändere zu 'flex' um wieder sichtbar zu machen */
+  gap: var(--nav-links-gap);
+  margin: 0 -20px 0 auto; /* Links bleiben rechts */
+  padding: 0;
+  transform: translate(
+    calc(var(--nav-links-x) + var(--nav-all-x, 0px)),
+    calc(var(--nav-links-y) + var(--nav-all-y, 0px))
+  );
+}
+
+/* Nur die einzelnen Menüpunkte verschieben (Home/Über uns/...) */
+nav ul li:nth-child(1) { transform: translate(var(--nav-home-x), var(--nav-home-y)); }
+nav ul li:nth-child(2) { transform: translate(var(--nav-about-x), var(--nav-about-y)); }
+nav ul li:nth-child(3) { transform: translate(var(--nav-services-x), var(--nav-services-y)); }
+nav ul li:nth-child(4) { transform: translate(var(--nav-gallery-x), var(--nav-gallery-y)); }
+nav ul li:nth-child(5) { transform: translate(var(--nav-contact-x), var(--nav-contact-y)); }
+
+/* Links in der Navigation - keine Unterstreichung, Farbe, Effekt beim Drüberfahren. */
+nav a {
+  text-decoration: none; /* Keine Unterstreichung - ändere zu 'underline' für Unterstreichung. */
+  color: #333; /* Dunkle Farbe - ändere zu #007bff für blau. */
+  font-weight: 700; /* Fett - ändere zu 400 für normal. */
+  font-size: var(--nav-all-font-size, var(--nav-link-font-size));
+  padding: var(--nav-all-pad-y, var(--nav-link-pad-y)) var(--nav-all-pad-x, var(--nav-link-pad-x));
+  transition: color 0.3s; /* Sanfte Farbänderung - erhöhe auf 0.5s für langsamer. */
+}
+
+nav a:hover {
+  color: #007bff; /* Blaue Farbe beim Drüberfahren - ändere zu #ff0000 für rot. */
+}
+
+/* Hero-Bereich - Bild mit verstellbarer Höhe. */
+.hero {
+  /* Hintergrundbild: Pfad wird von hier aus (css/style.css) angegeben */
+  background: url('../images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg') no-repeat var(--hero-bg-position); /* Benutze die Variable --hero-bg-position */
+  background-size: cover; /* Bild füllt den Bereich - ändere zu 'contain' wenn du das ganze Bild sehen willst */
+  background-attachment: fixed; /* Bild bleibt im Hintergrund */
+
+  /* Vollständige Höhe des Fensters */
+  height: 100vh; /* 100% der Fensterhöhe */
+  width: 100%; /* 100% der Fensterbreite */
+  
+  /* Startet direkt von oben - keine weiße Leiste */
+  margin: 0;
+  padding: 0;
+
+  /* Zentriert den Inhalt vertikal und horizontal über dem Bild */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikal mittig */
+  align-items: center; /* Horizontal mittig */
+
+  text-align: center;
+  color: #fff; /* Weißer Text über dem Bild */
+  position: relative;
+}
+
+/* Button im Hero - blauer Hintergrund, runde Ecken, Hover-Effekt. Call-to-Action Button. */
+.hero button {
+  background: #007bff; /* Blauer Hintergrund - ändere zu #28a745 für grün. */
+  color: #fff; /* Weißer Text - ändere zu #000 für schwarz. */
+  border: none; /* Kein Rand - füge '2px solid #000' für Rand hinzu. */
+  padding: var(--cta-pad-y) var(--cta-pad-x);
+  font-size: var(--cta-font-size);
+  border-radius: 10px; /* Runde Ecken - erhöhe auf 15px für runder. */
+  cursor: pointer; /* Mauszeiger als Hand - standard für Buttons. */
+  transition: background 0.3s; /* Sanfte Hintergrundänderung - erhöhe auf 0.5s für langsamer. */
+  font-weight: bold; /* Fett gedruckt - ändere zu normal für dünn. */
+  transform: translate(var(--cta-x), var(--cta-y));
+}
+
+.hero button:hover {
+  background: #0056b3; /* Dunkler Blau beim Hover - ändere passend zur Hauptfarbe. */
+}
+
+/* Überschrift im Hero - große Schrift, spezielle Schriftart. Die Hauptüberschrift. */
+.hero h2 {
+  font-size: 4em; /* Große Schrift - ändere auf 5em für riesig, 3em für kleiner. */
+  margin-bottom: 20px; /* Abstand unten - erhöhe auf 30px für mehr Platz. */
+  font-family: 'Alex Brush', cursive; /* Schöne Schriftart - ändere zu 'Arial' für normal. */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Schatten für bessere Sichtbarkeit auf dem Bild - ändere Farbe oder entferne. */
+}
+
+/* Paragraph im Hero - mittlere Schrift, max Breite. Beschreibungstext. */
+.hero p {
+  font-size: 1.5em; /* Mittlere Schrift - ändere auf 1.8em für größer. */
+  max-width: 700px; /* Maximale Breite - erhöhe auf 900px für breiter. */
+  margin: 0 auto 40px; /* Zentrieren und Abstand unten - ändere auto zu 0 für nicht zentrieren. */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Schatten für Sichtbarkeit - passe an. */
+}
+
+/* Sektionen About, Services, Gallery, Contact - Padding, zentrierter Text, heller Hintergrund */
+.about, .services, .gallery, .contact {
+  padding: 80px 20px; /* Viel Padding - ändere für mehr/weniger Platz */
+  text-align: center; /* Text zentrieren */
+  background: #f9f9f9; /* Heller Hintergrund - ändere für andere Farbe */
+}
+
+/* Überschriften in diesen Sektionen - große Schrift, Abstand unten */
+.about h2, .services h2, .gallery h2, .contact h2 {
+  font-size: 2.5em; /* Große Schrift - ändere für größer/kleiner */
+  margin-bottom: 40px; /* Abstand unten */
+  color: #333; /* Dunkle Farbe */
+}
+
+/* Paragraphen in About und Services - mittlere Schrift, max Breite */
+.about p, .services p {
+  font-size: 1.1em; /* Mittlere Schrift */
+  max-width: 800px; /* Maximale Breite - ändere für breiter/schmaler */
+  margin: 0 auto 40px; /* Zentrieren und Abstand unten */
+}
+
+/* Liste der Services - Flexbox für horizontale Anordnung, umbrechen */
+.service-list {
+  display: flex; /* Flexbox */
+  justify-content: space-around; /* Gleichmäßig verteilen */
+  flex-wrap: wrap; /* Umbrechen bei kleinerem Screen */
+  gap: 40px; /* Abstand zwischen Items - ändere für mehr/weniger */
+  max-width: 1200px; /* Maximale Breite */
+  margin: 0 auto; /* Zentrieren */
+}
+
+/* Einzelner Service - flexibel, min Breite, zentrierter Text */
+.service {
+  flex: 1; /* Gleichmäßige Breite */
+  min-width: 250px; /* Minimale Breite - ändere für schmaler/breiter */
+  text-align: center; /* Text zentrieren */
+}
+
+/* Überschrift in Service - mittlere Größe, Abstand */
+.service h3 {
+  font-size: 1.5em; /* Mittlere Größe */
+  margin-bottom: 15px; /* Abstand unten */
+  color: #333; /* Dunkle Farbe */
+}
+
+/* Paragraph in Service - kleine Schrift, graue Farbe */
+.service p {
+  font-size: 1em; /* Normale Größe */
+  color: #666; /* Graue Farbe - ändere für andere Farbe */
+}
+
+/* Galerie-Icons - Grid-Layout, automatische Spalten, Abstand */
+.gallery .icons {
+  display: grid; /* Grid für responsive Layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Automatische Spalten - ändere minmax für andere Breite */
+  gap: 30px; /* Abstand zwischen Icons - ändere für mehr/weniger */
+  max-width: 1200px; /* Maximale Breite */
+  margin: 0 auto; /* Zentrieren */
+}
+
+/* Einzelnes Icon - weißer Hintergrund, runde Ecken, Schatten */
+.icon {
+  background: #fff; /* Weißer Hintergrund - ändere für andere Farbe */
+  border-radius: 10px; /* Runde Ecken - ändere für mehr/weniger */
+  padding: 20px; /* Padding innen - ändere für mehr/weniger */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Leichter Schatten - ändere für stärker/schwächer */
+}
+
+/* Bild im Icon - volle Breite, feste Höhe, gestreckt */
+.icon img {
+  width: 100%; /* Volle Breite */
+  height: 200px; /* Feste Höhe - ändere für höher/niedriger */
+  object-fit: cover; /* Strecken ohne Verzerrung */
+  border-radius: 5px; /* Leichte Rundung */
+}
+
+/* Paragraph im Icon - Abstand oben, graue Farbe */
+.icon p {
+  margin: 10px 0 0; /* Abstand oben */
+  font-size: 1em; /* Normale Größe */
+  color: #666; /* Graue Farbe */
+}
+
+/* Kontakt-Formular - max Breite, zentriert, Flexbox vertikal */
+.contact form {
+  max-width: 600px; /* Maximale Breite - ändere für breiter/schmaler */
+  margin: 0 auto; /* Zentrieren */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Vertikal */
+  gap: 15px; /* Abstand zwischen Feldern - ändere für mehr/weniger */
+}
+
+/* Input und Textarea im Kontakt - Padding, dünner Rand, Rundung */
+.contact input, .contact textarea {
+  padding: 15px; /* Padding innen */
+  border: 1px solid #ddd; /* Dünner grauer Rand - ändere Farbe */
+  border-radius: 5px; /* Runde Ecken */
+  font-family: 'Playfair Display', serif; /* Gleiche Schriftart */
+  font-size: 1em; /* Normale Größe */
+}
+
+/* Button im Kontakt - grüner Hintergrund, Hover-Effekt */
+.contact button {
+  background: #28a745; /* Grüner Hintergrund - ändere für andere Farbe */
+  color: #fff; /* Weißer Text */
+  border: none; /* Kein Rand */
+  padding: 15px; /* Padding */
+  border-radius: 5px; /* Runde Ecken */
+  cursor: pointer; /* Hand-Cursor */
+  font-size: 1.1em; /* Schriftgröße */
+  transition: background 0.3s; /* Sanfte Änderung */
+}
+
+.contact button:hover {
+  background: #218838; /* Dunkler Grün beim Hover */
+}
+
+/* Footer - dunkler Hintergrund, zentrierter Text, weiße Schrift */
+footer {
+  background: #333; /* Dunkler Hintergrund - ändere für andere Farbe */
+  color: #fff; /* Weiße Schrift */
+  text-align: center; /* Zentrieren */
+  padding: 20px; /* Padding */
+}
+
+footer .container {
+  max-width: 1200px; /* Maximale Breite */
+  margin: 0 auto; /* Zentrieren */
+}
+
+/* Soziale Links im Footer - Flexbox, zentriert, Abstand */
+.social-links {
+  display: flex; /* Flexbox */
+  justify-content: center; /* Zentrieren */
+  gap: 20px; /* Abstand zwischen Links */
+  margin-top: 10px; /* Abstand oben */
+}
+
+.social-links a {
+  color: #fff; /* Weiße Farbe */
+  font-size: 24px; /* Große Icons */
+  transition: color 0.3s; /* Sanfte Farbänderung */
+}
+
+.social-links a:hover {
+  color: #007bff; /* Blau beim Hover */
+}
+
+/* Responsive Design - für kleine Bildschirme */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Vertikale Navigation */
+    gap: 10px; /* Abstand */
+  }
+
+  .brand-logo {
+    position: static;
+    transform: translateY(var(--brand-logo-y));
+    margin: 0 auto;
+  }
+
+  nav ul {
+    flex-wrap: wrap; /* Umbrechen */
+    justify-content: center; /* Zentrieren */
+  }
+  .hero h2 {
+    font-size: 3em; /* Kleinere Überschrift für Mobile */
+  }
+  .service-list {
+    flex-direction: column; /* Vertikale Services */
+  }
+}
+
+/* ============================================
+   PAGE WRAPPER & HIDDEN STATES
+   ============================================ */
+.page-wrapper {
+  display: block;
+}
+
+.page-wrapper.hidden {
+  display: none;
+}
+
+/* Slide Animations für Page Transitions */
+.page-wrapper.slide-out-left {
+  animation: slideOutLeft 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.page-wrapper.slide-in-right {
+  animation: slideInRight 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.page-wrapper.slide-out-right {
+  animation: slideOutRight 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+.page-wrapper.slide-in-left {
+  animation: slideInLeft 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   KONTAKT PAGE STYLING
+   ============================================ */
+
+/* Kontakt Header - mit Zurück Button */
+.contact-header {
+  background: #fff;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.back-button {
+  position: absolute;
+  left: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Ovo', serif;
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: #000;
+}
+
+.contact-logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Kontakt Main Section */
+.contact-page {
+  padding: 60px 30px;
+  background: #fff;
+  min-height: calc(100vh - 200px);
+}
+
+.contact-page h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: 'Ovo', serif;
+  color: #333;
+}
+
+.contact-intro {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+  font-family: 'Ovo', serif;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  font-family: 'Ovo', serif;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 15px 40px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Ovo', serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: background 0.3s;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.contact-form button:hover {
+  background: #555;
+}
+
+/* Kontakt Footer */
+.contact-footer {
+  background: #f9f9f9;
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  margin-top: 60px;
+}
+
+.contact-footer p {
+  color: #999;
+  font-size: 14px;
+  font-family: 'Ovo', serif;
+}
+
+/* ============================================
+   DATENSCHUTZ PAGE STYLING (Steinway-Stil)
+   ============================================ */
+
+/* Datenschutz Navigation - wie Homepage */
+.privacy-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: transparent;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Weiße Scroll-Leiste für Datenschutz */
+.scroll-bar-privacy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--scroll-bar-height);
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  z-index: 19;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+body.privacy-scrolled .scroll-bar-privacy {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Logo für Datenschutz-Seite (großes Logo oben) */
+.privacy-brand-logo {
+  height: var(--brand-logo-height);
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(var(--brand-logo-y));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Logo für Scroll-Leiste auf Datenschutz */
+.privacy-scroll-logo {
+  display: none;
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, -20px);
+  height: calc(var(--scroll-bar-height) - 10px);
+  width: auto;
+  z-index: 22;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+body.privacy-scrolled .privacy-scroll-logo {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+body.privacy-scrolled .privacy-brand-logo {
+  display: none;
+}
+
+/* Zurück Button in der weißen Leiste */
+.privacy-back-btn {
+  position: fixed;
+  left: var(--privacy-scroll-back-left);
+  top: var(--privacy-scroll-back-top);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  font-family: 'Ovo', serif;
+  transition: opacity 0.3s;
+  z-index: 23;
+  display: none;
+  opacity: 0;
+}
+
+body.privacy-scrolled .privacy-back-btn {
+  display: block;
+  opacity: 1;
+}
+
+.privacy-back-btn:hover {
+  opacity: 0.7;
+}
+
+/* Datenschutz Header - analog Kontakt */
+.privacy-header {
+  background: #fff;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: none;
+  padding-top: var(--privacy-header-padding);
+  border-bottom: 1px solid #eee;
+}
+
+.privacy-header .back-button {
+  position: absolute;
+  left: var(--privacy-back-btn-left);
+  top: var(--privacy-back-btn-top);
+}
+
+.privacy-logo {
+  height: 60px;
+  width: auto;
+}
+
+.privacy-page {
+  padding: 80px 30px;
+  background: #fff;
+  min-height: calc(100vh - 200px);
+}
+
+.privacy-page .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.privacy-page h1 {
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  font-family: 'Ovo', serif;
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.privacy-page .intro {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.privacy-page h2 {
+  font-size: 1.5em;
+  margin: 50px 0 20px;
+  color: #1a1a1a;
+  font-family: 'Ovo', serif;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.privacy-page h3 {
+  font-size: 1.2em;
+  margin: 30px 0 15px;
+  color: #333;
+  font-family: 'Ovo', serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.privacy-page p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.privacy-page ul {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin: 15px 0 20px;
+  padding-left: 0;
+  list-style-position: inside;
+  text-align: center;
+}
+
+.privacy-page li {
+  margin-bottom: 8px;
+}
+
+.privacy-page strong {
+  color: #333;
+  font-weight: 500;
+}
+
+.privacy-footer {
+  background: #f5f5f5;
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.privacy-footer p {
+  color: #999;
+  font-size: 14px;
+  font-family: 'Ovo', serif;
+  margin: 0;
+}
+
+/* Footer Legal Links */
+.legal-links {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.legal-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.legal-links a:hover {
+  opacity: 0.7;
+}
+
+.legal-links .sep {
+  margin: 0 10px;
+  color: #bbb;
+}

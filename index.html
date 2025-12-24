@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Titel der Seite - erscheint im Browser-Tab -->
+  <title>Atelier St. Ioseph</title>
+  <meta name="description" content="Entdecke handgemalte Ikonen in ruhiger Arbeit. Einzigartige Kunstwerke für deine Sammlung.">
+
+  <!-- Favicon / Website-Icon (Browser-Tab + Google) -->
+  <!-- Safari cached Favicons sehr aggressiv: deshalb URL-Encoding + ?v=2 als Cache-Buster -->
+  <link rel="icon" type="image/png" href="images/Logo Kein_Name.png?v=12">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo Kein_Name.png?v=12">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/Logo Kein_Name.png?v=12">
+  <link rel="shortcut icon" href="images/Logo Kein_Name.png?v=12">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/Logo Kein_Name.png?v=12">
+
+  <!-- Social / Vorschau-Bild (WhatsApp, Facebook, etc.). Für Google ist das auch hilfreich. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Atelier St. Ioseph">
+  <meta property="og:description" content="Entdecke handgemalte Ikonen in ruhiger Arbeit. Einzigartige Kunstwerke für deine Sammlung.">
+  <meta property="og:image" content="images/Logo Kein_Name.png?v=12">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Atelier St. Ioseph">
+  <meta name="twitter:description" content="Entdecke handgemalte Ikonen in ruhiger Arbeit. Einzigartige Kunstwerke für deine Sammlung.">
+  <meta name="twitter:image" content="images/Logo Kein_Name.png?v=12">
+
+  <!-- Google/SEO: Logo als strukturierte Daten -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Atelier St. Ioseph",
+      "logo": "images/Logo%20Kein_Name.png?v=9"
+    }
+  </script>
+  <!-- Verlinkung zur CSS-Datei für das Styling -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts für spezielle Schriftarten -->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@400;700&family=Ovo&display=swap" rel="stylesheet">
+  <!-- Font Awesome für Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+  <body>
+    <!-- Header mit Navigation -->
+    <header>
+      <!-- Weiße Scroll-Leiste -->
+      <div class="scroll-bar"></div>
+      
+      <nav class="top-nav">
+        <div class="nav-left">
+          <!-- Hamburger Menu Button (oben links) -->
+          <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- Über Mich Button (neben Menu) -->
+          <a href="#about" class="about-btn">
+            <span class="about-text">Über Mich</span>
+            <i class="fas fa-user about-icon"></i>
+          </a>
+        </div>
+
+        <!-- Logo der Website (oben mittig) -->
+        <img src="images/Logo_Schwarz.png?v=8" alt="Atelier St. Ioseph" class="brand-logo">
+        
+        <!-- Logo für die weiße Leiste beim Scrollen -->
+        <img src="images/Logo%20Kein_Name.png" alt="Atelier St. Ioseph" class="scroll-logo">
+
+        <!-- Kontakt Button (oben rechts) -->
+        <a href="#contact" class="contact-btn">
+          <span class="contact-text">Kontakt</span>
+          <i class="fas fa-envelope contact-icon"></i>
+        </a>
+      </nav>
+
+      <!-- Slide-Out Menu (weiß, links) -->
+      <div class="slide-menu" id="slideMenu">
+        <!-- X Button oben links -->
+        <button class="menu-close" id="menuClose" aria-label="Menü schließen">&times;</button>
+        
+        <!-- Bild neben dem X (oben) -->
+        <img src="images/Logo%20Kein_Name.png" alt="Atelier St. Ioseph" class="menu-top-image">
+        
+        <!-- Menü-Header mit Logo -->
+        <div class="menu-header">
+          <img src="images/Logo_Schwarz.png?v=8" alt="Atelier St. Ioseph" class="menu-logo">
+        </div>
+
+        <!-- Menü-Kategorien -->
+        <ul class="menu-list">
+          <li><a href="#home" class="menu-link">Home</a></li>
+          <li><a href="#about" class="menu-link">Über Mich</a></li>
+          <li><a href="#services" class="menu-link">Services</a></li>
+          <li><a href="#gallery" class="menu-link">Galerie</a></li>
+        </ul>
+
+        <!-- Kontakt Sektion unten (Steinway-Stil) -->
+        <div class="menu-footer">
+          <a href="#contact" class="menu-contact-link">
+            <i class="fas fa-envelope"></i>
+            Kontakt
+          </a>
+        </div>
+      </div>
+
+      <!-- Menü Backdrop (dunkle Fläche hinter Menu) -->
+      <div class="menu-backdrop" id="menuBackdrop"></div>
+    </header>
+
+    <!-- SEITE 1: HOME (alle bisherigen Sektionen) - Standard Ansicht -->
+    <div id="page-home" class="page-wrapper">
+      <!-- Hero-Bereich - Willkommens-Sektion -->
+      <section id="home" class="hero">
+        <!-- Nur das Bild, kein Text -->
+      </section>
+
+      <!-- Über uns Sektion -->
+      <section id="about" class="about">
+        <div class="container">
+          <!-- Überschrift - ändere für anderen Titel -->
+          <h2>Über Mich</h2>
+          <!-- Absätze mit Text - ändere für andere Inhalte -->
+          <p>Willkommen in der Welt der Ikonenmalerei, wo Tradition und Moderne sich treffen. Im Atelier St. Ioseph widmen wir uns seit Jahren der Kunst der byzantinischen Ikonenmalerei. Jede Ikone wird mit höchster Hingabe und Präzision geschaffen, um nicht nur ästhetische Schönheit zu vermitteln, sondern auch spirituelle Tiefe und Ruhe.</p>
+          <p>Unsere Arbeit beginnt mit der Auswahl der feinsten Materialien: Holztafeln aus nachhaltigen Quellen, Pigmente aus natürlichen Farben und Blattgold für die vergoldeten Details. Der Prozess ist meditativ und erfordert Geduld – von der Skizze über die Grundierung bis zur finalen Veredelung. Jede Ikone erzählt eine Geschichte und dient als Brücke zwischen dem Betrachter und dem Göttlichen.</p>
+          <p>Wir glauben, dass Kunst das Leben bereichern kann. Deshalb bieten wir nicht nur handgemalte Ikonen an, sondern auch Workshops, Beratungen und individuelle Anfertigungen. Entdecken Sie die Schönheit der traditionellen Kunst in einer modernen Welt.</p>
+        </div>
+      </section>
+
+      <!-- Services Sektion -->
+      <section id="services" class="services">
+        <div class="container">
+          <!-- Überschrift - ändere für anderen Titel -->
+          <h2>Unsere Services</h2>
+          <!-- Beschreibung - ändere für anderen Text -->
+          <p>Entdecken Sie unsere Dienstleistungen rund um die Ikonenmalerei.</p>
+          <div class="service-list">
+            <!-- Einzelner Service - dupliziere für mehr Services -->
+            <div class="service">
+              <h3>Maßgeschneiderte Ikonen</h3>
+              <p>Erstellen Sie Ihre eigene Ikone nach Ihren Wünschen.</p>
+            </div>
+            <div class="service">
+              <h3>Workshops</h3>
+              <p>Lernen Sie die Grundlagen der Ikonenmalerei.</p>
+            </div>
+            <div class="service">
+              <h3>Beratung</h3>
+              <p>Persönliche Beratung zur Auswahl der passenden Ikone.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie Sektion -->
+      <section id="gallery" class="gallery">
+        <div class="container">
+          <!-- Überschrift - ändere für anderen Titel -->
+          <h2>Meine Sammlung</h2>
+          <div class="icons">
+            <div class="icon">
+              <img src="https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Ikon+1" alt="Ikon 1">
+              <p>Schöne Ikone mit goldenen Details.</p>
+            </div>
+            <div class="icon">
+              <img src="https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Ikon+2" alt="Ikon 2">
+              <p>Minimalistische Darstellung der Ruhe.</p>
+            </div>
+            <div class="icon">
+              <img src="https://via.placeholder.com/300x200/45B7D1/FFFFFF?text=Ikon+3" alt="Ikon 3">
+              <p>Traditionelle Ikone mit moderner Note.</p>
+            </div>
+            <div class="icon">
+              <img src="https://via.placeholder.com/300x200/F9CA24/FFFFFF?text=Ikon+4" alt="Ikon 4">
+              <p>Leuchtende Farben für Inspiration.</p>
+            </div>
+            <div class="icon">
+              <img src="https://via.placeholder.com/300x200/6C5CE7/FFFFFF?text=Ikon+5" alt="Ikon 5">
+              <p>Tiefe Symbolik in sanften Tönen.</p>
+            </div>
+            <div class="icon">
+              <img src="https://via.placeholder.com/300x200/A29BFE/FFFFFF?text=Ikon+6" alt="Ikon 6">
+              <p>Handwerkskunst der alten Schule.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <p>&copy; 2025 Atelier St. Ioseph. Alle Rechte vorbehalten.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          </div>
+          <div class="legal-links">
+            <a href="#privacy" class="privacy-link">Datenschutz</a>
+            <span class="sep">•</span>
+            <a href="#" class="impressum-link">Impressum</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- SEITE 2: KONTAKT - Separate Kontakt Seite -->
+    <div id="page-contact" class="page-wrapper hidden">
+      <header class="contact-header">
+        <button id="backToHome" class="back-button" aria-label="Zurück zur Startseite">← Zurück</button>
+        <img src="images/Logo_Schwarz.png?v=8" alt="Atelier St. Ioseph" class="contact-logo">
+      </header>
+
+      <section class="contact-page">
+        <div class="container">
+          <h1>Kontakt</h1>
+          <p class="contact-intro">Interessiert? Schreibe uns für Anfragen oder Bestellungen.</p>
+          
+          <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="E-Mail" required>
+            <textarea placeholder="Nachricht"></textarea>
+            <button type="submit">Senden</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="contact-footer">
+        <div class="container">
+          <p>&copy; 2025 Atelier St. Ioseph. Alle Rechte vorbehalten.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- SEITE 3: DATENSCHUTZ - Separate Seite -->
+    <div id="page-privacy" class="page-wrapper hidden">
+      <header class="privacy-header">
+        <button id="backToHomeFromPrivacy" class="back-button" aria-label="Zurück zur Startseite">← Zurück</button>
+        <img src="images/Logo_Schwarz.png?v=8" alt="Atelier St. Ioseph" class="privacy-logo">
+      </header>
+
+      <!-- Weiße Scroll-Leiste für Datenschutz -->
+      <div class="scroll-bar-privacy"></div>
+      
+      <nav class="privacy-nav">
+        <button class="privacy-back-btn" id="privacyBackBtn" aria-label="Zurück zur Startseite">← Zurück</button>
+        <img src="images/End_Logo_Transparent.png" alt="Atelier St. Ioseph" class="privacy-brand-logo">
+        <img src="images/Logo%20Kein_Name.png" alt="Atelier St. Ioseph" class="privacy-scroll-logo">
+      </nav>
+
+      <section class="privacy-page">
+        <div class="container">
+          <h1>Datenschutzbestimmungen</h1>
+          
+          <p class="intro">
+            Wir freuen uns über Ihr Interesse an den Seiten des Atelier St. Ioseph. Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie darüber, wie wir Ihre Daten im Rahmen Ihres Besuchs auf unserer Website verarbeiten.
+          </p>
+
+          <h2>1. Name und Kontaktdaten des Verantwortlichen</h2>
+          <p>
+            Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
+            <strong>Atelier St. Ioseph</strong><br>
+            Josef Mitrica<br>
+            Hausenerstr. 24<br>
+            78224 Singen (Hohentwiel)<br>
+            E-Mail: Iosef.mitrica@icloud.com
+          </p>
+
+          <h2>2. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck der Verwendung</h2>
+          
+          <h3>a) Beim Besuch der Website</h3>
+          <p>
+            Beim Aufrufen unserer Website werden durch den von Ihnen verwendeten Browser automatisch Informationen an den Server unserer Website übermittelt. Diese Informationen werden temporär in sogenannten Server-Logfiles gespeichert.
+          </p>
+          <p>Erfasst werden insbesondere:</p>
+          <ul>
+            <li>IP-Adresse des anfragenden Geräts</li>
+            <li>Datum und Uhrzeit des Zugriffs</li>
+            <li>aufgerufene Seiten</li>
+            <li>verwendeter Browser und Betriebssystem</li>
+          </ul>
+          <p>Die Verarbeitung dieser Daten erfolgt zu folgenden Zwecken:</p>
+          <ul>
+            <li>Gewährleistung eines reibungslosen Verbindungsaufbaus</li>
+            <li>Sicherstellung der technischen Stabilität und Sicherheit</li>
+            <li>Administrativen Zwecken</li>
+          </ul>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).<br>
+            Die Server-Logdaten werden spätestens nach 14 Tagen gelöscht.
+          </p>
+
+          <h3>b) Hosting</h3>
+          <p>
+            Diese Website wird bei einem externen Hosting-Dienstleister betrieben. Der Hosting-Provider verarbeitet personenbezogene Daten ausschließlich im Rahmen einer Auftragsverarbeitung gemäß Art. 28 DSGVO.
+          </p>
+
+          <h3>c) Kontaktaufnahme per E-Mail oder Kontaktformular</h3>
+          <p>
+            Wenn Sie uns per E-Mail oder über ein Kontaktformular kontaktieren, verarbeiten wir die von Ihnen mitgeteilten personenbezogenen Daten (z. B. Name, E-Mail-Adresse, Nachricht), um Ihre Anfrage zu beantworten und ggf. einen Kauf oder Auftrag vorzubereiten.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung).<br>
+            Die Angabe dieser Daten erfolgt freiwillig. Ohne diese Angaben ist eine Bearbeitung Ihrer Anfrage jedoch nicht möglich.
+          </p>
+          <p>
+            Sofern kein Vertrag zustande kommt, werden die Daten spätestens nach 6 Monaten gelöscht. Gesetzliche Aufbewahrungspflichten bleiben unberührt.
+          </p>
+
+          <h2>3. Kommunikation über WhatsApp</h2>
+          <p>
+            Sofern Sie ausdrücklich wünschen, die weitere Kommunikation über WhatsApp fortzusetzen, erfolgt die Datenverarbeitung außerhalb dieser Website.
+          </p>
+          <p>
+            <strong>WhatsApp ist ein Dienst der:</strong><br>
+            WhatsApp Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland.
+          </p>
+          <p>
+            Dabei können personenbezogene Daten (z. B. Telefonnummer, Nachrichteninhalte, Metadaten) auch auf Servern außerhalb der Europäischen Union verarbeitet werden.
+          </p>
+          <p>
+            Die Nutzung von WhatsApp erfolgt freiwillig. Alternativ steht jederzeit die Kommunikation per E-Mail zur Verfügung.
+          </p>
+          <p>
+            Mit der Aufnahme der Kommunikation über WhatsApp erklären Sie sich mit der damit verbundenen Datenverarbeitung einverstanden. Die weitere Kommunikation erfolgt in eigener Verantwortung des Nutzers.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong><br>
+            Art. 6 Abs. 1 lit. b DSGVO<br>
+            Art. 6 Abs. 1 lit. a DSGVO
+          </p>
+
+          <h2>4. Cookies</h2>
+          <p>
+            Unsere Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind (z. B. zur Seitendarstellung).
+          </p>
+          <p>
+            Es werden keine Analyse-, Tracking- oder Marketing-Cookies eingesetzt.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> § 25 Abs. 2 TTDSG i. V. m. Art. 6 Abs. 1 lit. f DSGVO.
+          </p>
+
+          <h2>5. Externe Inhalte und Drittanbieter</h2>
+          <p>
+            Auf dieser Website werden keine Analyse- oder Tracking-Dienste eingesetzt.
+          </p>
+          <p>
+            Schriftarten und Icons (z. B. Google Fonts oder Font Awesome) werden lokal eingebunden, sodass beim Besuch unserer Website keine Verbindung zu externen Servern hergestellt wird.
+          </p>
+
+          <h2>6. Speicherung bei Vertragsabschluss</h2>
+          <p>
+            Kommt es im Rahmen der Kontaktaufnahme zu einem Kauf oder Auftrag, speichern wir die hierfür erforderlichen personenbezogenen Daten entsprechend den gesetzlichen Aufbewahrungspflichten:
+          </p>
+          <p>
+            <strong>Rechnungs- und Vertragsdaten:</strong> 10 Jahre<br>
+            (gemäß § 147 AO, § 257 HGB)
+          </p>
+
+          <h2>7. Ihre Rechte als betroffene Person</h2>
+          <p>Sie haben jederzeit das Recht:</p>
+          <ul>
+            <li>Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten (Art. 15 DSGVO)</li>
+            <li>unrichtige Daten berichtigen zu lassen (Art. 16 DSGVO)</li>
+            <li>die Löschung Ihrer Daten zu verlangen (Art. 17 DSGVO)</li>
+            <li>die Einschränkung der Verarbeitung zu verlangen (Art. 18 DSGVO)</li>
+            <li>Datenübertragbarkeit zu verlangen (Art. 20 DSGVO)</li>
+            <li>Widerspruch gegen die Verarbeitung einzulegen (Art. 21 DSGVO)</li>
+          </ul>
+          <p>
+            Sofern eine Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.
+          </p>
+
+          <h2>8. Beschwerderecht</h2>
+          <p>
+            Sie haben das Recht, sich bei einer zuständigen Datenschutz-Aufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt.
+          </p>
+
+          <h2>9. Datensicherheit</h2>
+          <p>
+            Wir verwenden innerhalb des Website-Besuchs eine SSL- bzw. TLS-Verschlüsselung, um Ihre Daten bestmöglich vor unbefugtem Zugriff zu schützen.
+          </p>
+
+          <h2>10. Kontakt zum Datenschutz</h2>
+          <p>
+            Bei Fragen zum Datenschutz wenden Sie sich bitte an:<br>
+            <strong>Iosef.mitrica@icloud.com</strong>
+          </p>
+        </div>
+      </section>
+
+      <footer class="privacy-footer">
+        <div class="container">
+          <p>&copy; 2025 Atelier St. Ioseph. Datenschutz.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Steuerung: kleine Hilfs-Bedienung zum Anpassen des Hero-Bildes (Höhe + Bild-Position) -->
+    <div class="hero-controls" aria-hidden="false">
+      <strong>Bild anpassen</strong>
+      <div class="control-row">
+        <label for="heroHeightRange">Rahmen-Höhe: <span id="heroHeightValue">420px</span></label>
+        <input id="heroHeightRange" type="range" min="200" max="1200" step="10">
+      </div>
+      <div class="control-row">
+        <label for="heroPosRange">Bild-Vertikal: <span id="heroPosValue">25%</span></label>
+        <input id="heroPosRange" type="range" min="0" max="100" step="1">
+      </div>
+      <div class="control-note">Tipp: Schiebe die Regler, bis das Gesicht gut sichtbar ist. Änderungen bleiben lokal im Browser.</div>
+    </div>
+
+    <!-- JavaScript für langsames Scrolling bei allen Links -->
+    <script>
+      // Funktion für langsames Scrolling
+      function smoothScrollTo(element, duration) {
+        const targetPosition = element.offsetTop;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animation(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const run = ease(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t + b;
+          t--;
+          return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+      }
+
+      // Für alle Links, die mit # beginnen (Navigation und Button)
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        // Kontakt-Links NICHT smooth scrollen, werden separat gehandhabt
+        if (link.classList.contains('menu-contact-link') || link.classList.contains('contact-btn')) return;
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // Verhindert das normale Springen
+          const targetId = this.getAttribute('href').substring(1); // Holt die ID ohne #
+          const target = document.getElementById(targetId);
+          if (target) {
+            smoothScrollTo(target, 1000); // 1000ms sanftes Scrollen
+          }
+        });
+      });
+
+      // --- Hero Controls: live anpassbare Höhe und Bildposition (mit localStorage) ---
+      (function() {
+        const root = document.documentElement;
+        const heightRange = document.getElementById('heroHeightRange');
+        const posRange = document.getElementById('heroPosRange');
+        const heightValue = document.getElementById('heroHeightValue');
+        const posValue = document.getElementById('heroPosValue');
+
+        // Hilfsfunktion: lese aktuelle CSS-Variable und gib Standard zurück
+        function readVar(name, fallback) {
+          const v = getComputedStyle(root).getPropertyValue(name).trim();
+          return v || fallback;
+        }
+
+        // Werte aus localStorage, falls vorhanden
+        const saved = {
+          height: localStorage.getItem('hero_height'),
+          pos: localStorage.getItem('hero_pos')
+        };
+
+        // Initialwerte aus CSS holen (nur falls keine gespeicherten Werte vorhanden)
+        const defaultHeight = parseInt(readVar('--hero-height', '420px')) || 420;
+        let defaultPos = 25;
+        const bgPosRaw = readVar('--hero-bg-position', 'center 25%');
+        const match = bgPosRaw.match(/center\s+(\d+)%/);
+        if (match) defaultPos = parseInt(match[1], 10);
+        else if (bgPosRaw.indexOf('top') !== -1) defaultPos = 10;
+
+        // Anwenden: wenn localStorage vorhanden, nutze diese Werte, sonst CSS-Defaults
+        const startHeight = saved.height ? parseInt(saved.height, 10) : defaultHeight;
+        const startPos = saved.pos ? parseInt(saved.pos, 10) : defaultPos;
+
+        // Setze Slider und CSS-Variablen
+        heightRange.value = startHeight;
+        posRange.value = startPos;
+        heightValue.textContent = startHeight + 'px';
+        posValue.textContent = startPos + '%';
+        root.style.setProperty('--hero-height', startHeight + 'px');
+        root.style.setProperty('--hero-bg-position', 'center ' + startPos + '%');
+
+        // Speichere in localStorage und aktualisiere CSS-Variable
+        function saveHeight(v) {
+          localStorage.setItem('hero_height', v);
+          root.style.setProperty('--hero-height', v + 'px');
+          heightValue.textContent = v + 'px';
+        }
+
+        function savePos(pct) {
+          localStorage.setItem('hero_pos', pct);
+          root.style.setProperty('--hero-bg-position', 'center ' + pct + '%');
+          posValue.textContent = pct + '%';
+        }
+
+        // Events
+        heightRange.addEventListener('input', function() {
+          saveHeight(this.value);
+        });
+
+        posRange.addEventListener('input', function() {
+          savePos(this.value);
+        });
+
+        // Optional: klare lokale Speicherung (Reset)
+        window.clearHeroSettings = function() {
+          localStorage.removeItem('hero_height');
+          localStorage.removeItem('hero_pos');
+          // Reload um Defaults wieder einzulesen
+          location.reload();
+        };
+      })();
+
+      // === SCROLL STATE: Header shows white bar only when scrolled ===
+      (function() {
+        function updateScrollState() {
+          // Nicht in der Kontakt-Ansicht anwenden
+          if (document.body.classList.contains('contact-view')) {
+            document.body.classList.remove('scrolled');
+            return;
+          }
+          
+          // Für Datenschutz-Seite
+          if (!document.getElementById('page-privacy').classList.contains('hidden')) {
+            if (window.scrollY > 10) {
+              document.body.classList.add('privacy-scrolled');
+            } else {
+              document.body.classList.remove('privacy-scrolled');
+            }
+            return;
+          }
+          
+          // Für Homepage
+          if (window.scrollY > 10) {
+            document.body.classList.add('scrolled');
+          } else {
+            document.body.classList.remove('scrolled');
+          }
+        }
+
+        window.addEventListener('scroll', updateScrollState);
+        window.addEventListener('load', updateScrollState);
+      })();
+      // === SLIDE-OUT MENU TOGGLE ===
+      (function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const slideMenu = document.getElementById('slideMenu');
+        const menuBackdrop = document.getElementById('menuBackdrop');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        console.log('Menu Close Button:', menuClose);
+        console.log('Menu Close computed style:', menuClose ? window.getComputedStyle(menuClose) : 'null');
+
+        // Menü öffnen
+        menuToggle.addEventListener('click', function() {
+          console.log('Opening menu');
+          document.body.classList.add('menu-open');
+          setTimeout(() => {
+            console.log('Menu Close visibility after open:', window.getComputedStyle(menuClose).visibility);
+            console.log('Menu Close z-index after open:', window.getComputedStyle(menuClose).zIndex);
+          }, 100);
+        });
+
+        // Menü schließen (X Button) - DIREKT
+        menuClose.addEventListener('click', function(e) {
+          console.log('CLOSE BUTTON CLICKED!!!');
+          e.preventDefault();
+          e.stopPropagation();
+          document.body.classList.remove('menu-open');
+          return false;
+        }, true);
+
+        // Menü schließen (Backdrop klick)
+        menuBackdrop.addEventListener('click', function() {
+          console.log('Backdrop clicked');
+          document.body.classList.remove('menu-open');
+        });
+
+        // Menü schließen (Link klick)
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            document.body.classList.remove('menu-open');
+          });
+        });
+      })();
+
+      // === PAGE NAVIGATION (Home vs Kontakt) ===
+      (function() {
+        const pageHome = document.getElementById('page-home');
+        const pageContact = document.getElementById('page-contact');
+        const pagePrivacy = document.getElementById('page-privacy');
+        const contactLink = document.querySelector('.menu-contact-link');
+        const headerContactBtn = document.querySelector('.contact-btn');
+        const backButton = document.getElementById('backToHome');
+        const privacyLink = document.querySelector('.privacy-link');
+        const backButtonPrivacy = document.getElementById('backToHomeFromPrivacy');
+        const privacyBackBtn = document.getElementById('privacyBackBtn');
+
+        function showContactPage() {
+          // Home nach links raus, Kontakt von rechts rein
+          pageHome.classList.add('slide-out-left');
+          pageContact.classList.remove('hidden');
+          pageContact.classList.add('slide-in-right');
+          document.body.classList.add('contact-view');
+          document.body.classList.remove('menu-open');
+          
+          setTimeout(() => {
+            pageHome.classList.add('hidden');
+            pageHome.classList.remove('slide-out-left');
+            pageContact.classList.remove('slide-in-right');
+          }, 700);
+          
+          window.scrollTo(0, 0);
+        }
+
+        function showHomePage() {
+          // Kontakt nach rechts raus, Home von links rein
+          pageContact.classList.add('slide-out-right');
+          pageHome.classList.remove('hidden');
+          pageHome.classList.add('slide-in-left');
+          document.body.classList.remove('contact-view');
+          
+          setTimeout(() => {
+            pageContact.classList.add('hidden');
+            pageContact.classList.remove('slide-out-right');
+            pageHome.classList.remove('slide-in-left');
+          }, 700);
+          
+          window.scrollTo(0, 0);
+        }
+
+        function showPrivacyPage() {
+          // Home nach links raus, Datenschutz von rechts rein
+          pageHome.classList.add('slide-out-left');
+          pagePrivacy.classList.remove('hidden');
+          pagePrivacy.classList.add('slide-in-right');
+          document.body.classList.remove('menu-open');
+
+          setTimeout(() => {
+            pageHome.classList.add('hidden');
+            pageHome.classList.remove('slide-out-left');
+            pagePrivacy.classList.remove('slide-in-right');
+          }, 700);
+
+          window.scrollTo(0, 0);
+        }
+
+        function backHomeFromPrivacy() {
+          // Datenschutz nach rechts raus, Home von links rein
+          pagePrivacy.classList.add('slide-out-right');
+          pageHome.classList.remove('hidden');
+          pageHome.classList.add('slide-in-left');
+
+          setTimeout(() => {
+            pagePrivacy.classList.add('hidden');
+            pagePrivacy.classList.remove('slide-out-right');
+            pageHome.classList.remove('slide-in-left');
+          }, 700);
+
+          window.scrollTo(0, 0);
+        }
+
+        // Click auf Kontakt (Footer im Menü) -> zeige Kontakt-Seite
+        if (contactLink) {
+          contactLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            showContactPage();
+          });
+        }
+
+        // Click auf Kontakt (Header oben rechts) -> zeige Kontakt-Seite
+        if (headerContactBtn) {
+          headerContactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showContactPage();
+          });
+        }
+
+        // Click auf Zurück -> zeige Home-Seite
+        if (backButton) {
+          backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            showHomePage();
+          });
+        }
+
+        // Click auf Datenschutz (Footer) -> zeige Datenschutz-Seite
+        if (privacyLink) {
+          privacyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPrivacyPage();
+          });
+        }
+
+        // Click auf Zurück in Datenschutz -> zeige Home-Seite
+        if (backButtonPrivacy) {
+          backButtonPrivacy.addEventListener('click', function(e) {
+            e.preventDefault();
+            backHomeFromPrivacy();
+          });
+        }
+        
+        // Click auf Zurück in Scroll-Leiste (Datenschutz) -> zeige Home-Seite
+        if (privacyBackBtn) {
+          privacyBackBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            backHomeFromPrivacy();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
