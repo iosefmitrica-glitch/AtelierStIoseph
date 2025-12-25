@@ -930,6 +930,22 @@ footer .container {
     padding: 15px 20px;
   }
 
+  .contact-header {
+    padding: 14px 16px;
+    padding-top: 60px;
+    min-height: 150px;
+  }
+
+  .contact-header::after {
+    top: 130px;
+  }
+
+  .back-button {
+    left: 20px;
+    top: 50px;
+    font-size: 14px;
+  }
+
   .contact-page {
     padding: 60px 16px 32px;
   }
@@ -1001,9 +1017,24 @@ footer .container {
     padding-top: 0;
   }
 
+  .contact-header {
+    padding: 14px 16px;
+    padding-top: 60px;
+    min-height: 150px;
+  }
+
+  .contact-header::after {
+    top: 130px;
+  }
+
+  .back-button {
+    left: 20px;
+    top: 50px;
+    font-size: 14px;
+  }
+
   .contact-logo {
     height: 70px;
-    margin-bottom: 20px;
   }
 
   .privacy-header {
@@ -1067,6 +1098,22 @@ footer .container {
     padding: 12px 15px;
   }
 
+  .contact-header {
+    padding: 12px 14px;
+    padding-top: 50px;
+    min-height: 130px;
+  }
+
+  .contact-header::after {
+    top: 110px;
+  }
+
+  .back-button {
+    left: 16px;
+    top: 40px;
+    font-size: 13px;
+  }
+
   .contact-page {
     padding: 50px 14px 28px;
   }
@@ -1086,6 +1133,22 @@ footer .container {
   #page-contact,
   #page-privacy {
     padding-top: 0;
+  }
+
+  .contact-header {
+    padding: 12px 14px;
+    padding-top: 50px;
+    min-height: 130px;
+  }
+
+  .contact-header::after {
+    top: 110px;
+  }
+
+  .back-button {
+    left: 16px;
+    top: 40px;
+    font-size: 13px;
   }
 
   .privacy-page h1 {
@@ -1198,17 +1261,60 @@ footer .container {
    KONTAKT PAGE STYLING
    ============================================ */
 
-/* Kontakt Header - versteckt, nur Scroll-Leiste wird verwendet */
+/* Kontakt Header - sichtbar am Anfang, verschwindet beim Scrollen */
 .contact-header {
-  display: none;
+  background: #fff;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: none;
+  padding-top: 100px;
+  min-height: 220px;
+}
+
+body.contact-view.contact-scrolled .contact-header {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 200px;
+  height: 1px;
+  background: #eee;
 }
 
 .back-button {
-  display: none;
+  position: absolute;
+  left: 50px;
+  top: 90px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Ovo', serif;
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: #000;
 }
 
 .contact-logo {
-  display: none;
+  height: var(--contact-logo-height);
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(calc(-50% + var(--contact-logo-x)));
+  pointer-events: none;
+  z-index: 5;
 }
 
 /* Kontakt Main Section */
