@@ -1018,23 +1018,21 @@ footer .container {
   }
 
   .contact-header {
-    padding: 14px 16px;
-    padding-top: 60px;
-    min-height: 150px;
-  }
-
-  .contact-header::after {
-    top: 130px;
+    padding: 12px 16px;
+    min-height: 70px;
   }
 
   .back-button {
-    left: 20px;
-    top: 50px;
+    left: 16px;
     font-size: 14px;
   }
 
   .contact-logo {
-    height: 70px;
+    height: 90px;
+  }
+
+  .contact-page {
+    padding: 100px 16px 32px;
   }
 
   .privacy-header {
@@ -1136,19 +1134,21 @@ footer .container {
   }
 
   .contact-header {
-    padding: 12px 14px;
-    padding-top: 50px;
-    min-height: 130px;
-  }
-
-  .contact-header::after {
-    top: 110px;
+    padding: 10px 12px;
+    min-height: 65px;
   }
 
   .back-button {
-    left: 16px;
-    top: 40px;
+    left: 12px;
     font-size: 13px;
+  }
+
+  .contact-logo {
+    height: 70px;
+  }
+
+  .contact-page {
+    padding: 90px 14px 28px;
   }
 
   .privacy-page h1 {
@@ -1261,38 +1261,25 @@ footer .container {
    KONTAKT PAGE STYLING
    ============================================ */
 
-/* Kontakt Header - sichtbar am Anfang, verschwindet beim Scrollen */
+/* Kontakt Header - bleibt oben fixiert beim Scrollen */
 .contact-header {
   background: #fff;
   padding: 20px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  border-bottom: none;
-  padding-top: 100px;
-  min-height: 220px;
-}
-
-body.contact-view.contact-scrolled .contact-header {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.contact-header::after {
-  content: '';
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  top: 200px;
-  height: 1px;
-  background: #eee;
+  z-index: 1100;
+  border-bottom: 1px solid #f0f0f0;
+  min-height: 80px;
 }
 
 .back-button {
   position: absolute;
-  left: 50px;
-  top: 90px;
+  left: 30px;
   background: none;
   border: none;
   cursor: pointer;
@@ -1309,17 +1296,12 @@ body.contact-view.contact-scrolled .contact-header {
 .contact-logo {
   height: var(--contact-logo-height);
   width: auto;
-  position: absolute;
-  left: 50%;
-  top: 50px;
-  transform: translateX(calc(-50% + var(--contact-logo-x)));
-  pointer-events: none;
-  z-index: 5;
+  transform: translateX(var(--contact-logo-x));
 }
 
 /* Kontakt Main Section */
 .contact-page {
-  padding: 80px 30px;
+  padding: 140px 30px 60px;
   background: #fff;
   min-height: calc(100vh - 200px);
 }
