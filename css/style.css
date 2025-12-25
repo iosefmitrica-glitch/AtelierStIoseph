@@ -915,9 +915,9 @@ footer .container {
   :root {
     --brand-logo-height: 80px;
     --scroll-bar-height: 60px;
-    --about-btn-y: -5px;
-    --about-btn-x: 20px;
-    --about-text-size: 12px;
+    --about-btn-y: -4px;
+    --about-btn-x: 14px;
+    --about-text-size: 11px;
     --contact-text-size: 12px;
     --privacy-header-padding: 60px;
     --privacy-back-btn-top: 50px;
@@ -929,7 +929,7 @@ footer .container {
   }
 
   .nav-left {
-    gap: 10px;
+    gap: 6px;
   }
 
   .nav-left .hamburger,
@@ -941,12 +941,12 @@ footer .container {
   /* Smaller about/contact on tablets/phones */
   .about-btn {
     font-size: var(--about-text-size);
-    gap: 4px;
+    gap: 2px;
     padding: 0;
   }
 
   .about-icon {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .contact-btn {
