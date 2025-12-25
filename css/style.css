@@ -4,24 +4,40 @@
   --brand-logo-y: 50px; /* Logo hoch/runter: negativ = hoch, positiv = runter */
   
   /* Weiße Leiste beim Scrollen */
-  --scroll-bar-height: 70px; /* Höhe der weißen Leiste beim Scrollen (z.B. 20px klein, 80px groß) */
+  --scroll-bar-height: 90px; /* Höhe der weißen Leiste beim Scrollen (z.B. 20px klein, 80px groß) */
+
+  /* Weiße Leiste nur auf Datenschutz */
+  --privacy-scroll-bar-height: 90px; /* Eigene Höhe für die Datenschutz-Leiste (fällt zurück auf --scroll-bar-height) */
   
   /* Über Mich Button */
-  --about-btn-y: 2wpx; /* Über Mich hoch/runter: negativ = hoch, positiv = runter */
+  --about-btn-y: 2px; /* Über Mich hoch/runter: negativ = hoch, positiv = runter */
   --about-btn-x: 30px; /* Über Mich nach rechts/links: positiv = rechts, negativ = links */
   --about-text-size: 16px; /* Schriftgröße von "Über Mich" Text */
   
   /* Kontakt Button */
   --contact-btn-height: 32px; /* Höhe vom Kontakt Button */
   --contact-text-size: 16px; /* Schriftgröße von "Kontakt" Text */
+
+  /* Kontakt Logo Steuerung */
+  --contact-logo-height: 150px; /* Größe des Logos auf der Kontakt-Seite */
+  --contact-logo-x: -25px; /* Logo horizontal verschieben (negativ = links, positiv = rechts) */
   
   /* Datenschutz Header Linie */
   --privacy-header-padding: 100px; /* Abstand oben im Datenschutz Header (z.B. 80px weniger, 150px mehr) */
-  --privacy-back-btn-top: 80px; /* Zurück-Button Abstand von oben (z.B. 20px höher, 50px tiefer) */
+  --privacy-back-btn-top: 90px; /* Zurück-Button Abstand von oben (z.B. 20px höher, 50px tiefer) */
   --privacy-back-btn-left: 50px; /* Zurück-Button Abstand von links (z.B. 40px mehr rechts, 20px weniger) */
+  --privacy-header-border-top: 200px; /* Position der grauen Linie unter Zurück (z.B. 200px höher, 250px tiefer) */
+  --privacy-header-border-height: 1px; /* Dicke der grauen Linie (z.B. 1px dünn, 3px dick) */
+  --privacy-header-border-height: 1px; /* Dicke der grauen Linie (z.B. 1px dünn, 3px dick) */
+
+  /* Datenschutz Logo Steuerung */
+  --privacy-logo-height: 150px; /* Groesse des Logos im Datenschutz-Header */
+  --privacy-logo-y: -40px; /* Logo im Datenschutz-Header hoch/runter schieben */
+  --privacy-logo-top: 50px; /* Feste Position von oben, unabhängig von der Linie */
+  --privacy-logo-x: -30px; /* Horizontale Feinabstimmung (negativ = links, positiv = rechts) */
   
   /* Zurück-Button in weißer Leiste */
-  --privacy-scroll-back-top: 25px; /* Zurück in weißer Leiste: Abstand von oben (z.B. 25px für tiefer) */
+  --privacy-scroll-back-top: 35px; /* Zurück in weißer Leiste: Abstand von oben (z.B. 25px für tiefer) */
   --privacy-scroll-back-left: 50px; /* Zurück in weißer Leiste: Abstand von links (z.B. 50px für rechts) */
 
   /* Logo-Steuerung (nur das Bild!) */
@@ -49,6 +65,10 @@
     --nav-all-pad-y: 10px; /* Alle Links: Padding oben/unten */
     --nav-all-pad-x: 15px; /* Alle Links: Padding links/rechts */
 
+  /* GALERIE STEUERUNG */
+  --gallery-y: 70px; /* Galerie hoch/runter: negativ = hoch, positiv = runter */
+  --gallery-height: 500px; /* Höhe der Galerie-Bilder */
+
   /* Einzelne Links (nur dieses Wort verschieben) */
   --nav-home-x: 0px;
   --nav-home-y: 0px;
@@ -74,17 +94,10 @@
   
   /* Menu Abstand zwischen Links */
   --menu-link-spacing: 15px; /* Abstand zwischen Home, Über uns, Services, Galerie */
-  --hero-height: 200px;
-  --hero-bg-position: center 40%;
 }
-/* Glatte Scroll-Verhalten für die ganze Seite - macht das Scrollen sanft */
+/* Smooth Scroll wird per JavaScript gesteuert (siehe index.html) */
 html {
-  scroll-behavior: smooth;
-}
-
-/* Glatte Bewegung beim Scrollen - macht das Runterscrollen sanft, nicht ruckelig. Gut für schöne Bewegung. */
-html {
-  scroll-behavior: smooth; /* Ändere zu 'auto' für schnelles Springen, aber smooth ist besser. */
+  scroll-behavior: auto;
 }
 
 /* --- Kleine Steuerung (nur für den Seitenbesitzer) --- */
@@ -131,7 +144,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10; /* Über dem Bild */
+  z-index: 1001; /* Über scroll-bar */
 }
 
 /* Navigationsleiste - oben, transparent, mit Hamburger + Logo + Kontakt */
@@ -143,7 +156,7 @@ nav.top-nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20; /* Über Hero */
+  z-index: 1001; /* Über scroll-bar */
   background: transparent;
   padding: 20px 30px;
   max-width: 100%;
@@ -165,17 +178,19 @@ nav.top-nav {
   left: 0;
   right: 0;
   height: var(--scroll-bar-height);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
-  z-index: 19;
+  z-index: 50;
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  pointer-events: none;
 }
 
 body.scrolled .scroll-bar {
   transform: translateY(0);
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* Logo für Scroll-Leiste - versteckt standardmäßig */
@@ -318,7 +333,7 @@ body.menu-open .menu-toggle span:nth-child(3) {
   width: 400px;
   height: 100vh;
   background: #fff;
-  z-index: 100;
+  z-index: 2000;
   transition: left 0.4s ease;
   overflow-y: auto;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -328,13 +343,25 @@ body.menu-open .slide-menu {
   left: 0;
 }
 
+/* Hide hamburger when menu is open */
+body.menu-open .menu-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hide about button when menu is open */
+body.menu-open .about-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* X Button - innerhalb des Menus */
 .menu-close {
   background: #fff;
   border: none;
   font-size: 40px;
   font-weight: 300;
-  cursor: pointer !important;
+  cursor: pointer;
   color: #333;
   transition: 0.3s;
   padding: 0;
@@ -343,13 +370,19 @@ body.menu-open .slide-menu {
   position: absolute;
   left: 20px;
   top: 20px;
-  z-index: 101;
+  z-index: 2001;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: all !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-close:active,
+.menu-close:focus {
+  outline: none;
 }
 
 .menu-close:hover {
@@ -463,7 +496,7 @@ body.menu-open .slide-menu {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 18;
+  z-index: 1500;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -472,6 +505,12 @@ body.menu-open .slide-menu {
 /* Kontakt-Ansicht: NUR den Haupt-Header (direkter Body-Header) & Hero-Controls ausblenden */
 body.contact-view > header,
 body.contact-view .hero-controls {
+  display: none !important;
+}
+
+/* Datenschutz-Ansicht blendet den normalen Header aus und nutzt eigene Leiste */
+body.privacy-view > header,
+body.privacy-view .hero-controls {
   display: none !important;
 }
 
@@ -554,12 +593,13 @@ nav a:hover {
 /* Hero-Bereich - Bild mit verstellbarer Höhe. */
 .hero {
   /* Hintergrundbild: Pfad wird von hier aus (css/style.css) angegeben */
-  background: url('../images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg') no-repeat var(--hero-bg-position); /* Benutze die Variable --hero-bg-position */
-  background-size: cover; /* Bild füllt den Bereich - ändere zu 'contain' wenn du das ganze Bild sehen willst */
-  background-attachment: fixed; /* Bild bleibt im Hintergrund */
+  background: #000 url('../images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg') no-repeat center 40%;
+  background-size: cover;
+  background-attachment: scroll;
 
   /* Vollständige Höhe des Fensters */
-  height: 100vh; /* 100% der Fensterhöhe */
+  min-height: 100vh;
+  height: 100vh;
   width: 100%; /* 100% der Fensterbreite */
   
   /* Startet direkt von oben - keine weiße Leiste */
@@ -575,6 +615,11 @@ nav a:hover {
   text-align: center;
   color: #fff; /* Weißer Text über dem Bild */
   position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  display: none;
 }
 
 /* Button im Hero - blauer Hintergrund, runde Ecken, Hover-Effekt. Call-to-Action Button. */
@@ -589,6 +634,8 @@ nav a:hover {
   transition: background 0.3s; /* Sanfte Hintergrundänderung - erhöhe auf 0.5s für langsamer. */
   font-weight: bold; /* Fett gedruckt - ändere zu normal für dünn. */
   transform: translate(var(--cta-x), var(--cta-y));
+  position: relative;
+  z-index: 10;
 }
 
 .hero button:hover {
@@ -625,6 +672,12 @@ nav a:hover {
   color: #333; /* Dunkle Farbe */
 }
 
+/* About Überschrift in spezieller Schriftart */
+.about h2 {
+  font-family: 'Alex Brush', cursive; /* Elegante Schriftart */
+  font-size: 3.5em; /* Größer als andere Überschriften */
+}
+
 /* Paragraphen in About und Services - mittlere Schrift, max Breite */
 .about p, .services p {
   font-size: 1.1em; /* Mittlere Schrift */
@@ -647,6 +700,104 @@ nav a:hover {
   flex: 1; /* Gleichmäßige Breite */
   min-width: 250px; /* Minimale Breite - ändere für schmaler/breiter */
   text-align: center; /* Text zentrieren */
+}
+
+/* GALERIE MIT 3 BILDERN (nebeneinander wie Steinway) */
+.about .gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin: 0 calc(-50vw + 50%);
+  padding: 0;
+  transform: translateY(var(--gallery-y));
+}
+
+.gallery-item {
+  width: 100%;
+  height: var(--gallery-height);
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+
+.gallery-item:hover {
+  transform: none;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transform: translate3d(0, 10%, 0);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+.gallery-overlay h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.gallery-overlay p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  opacity: 0.9;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (hover: none) {
+  .gallery-item:hover .gallery-overlay {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive: 2 Bilder auf Tablets */
+@media (max-width: 900px) {
+  .about .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item {
+    height: calc(var(--gallery-height) * 0.75);
+  }
+}
+
+/* Responsive: 1 Bild auf Mobile */
+@media (max-width: 600px) {
+  .about .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: calc(var(--gallery-height) * 0.6);
+  }
 }
 
 /* Überschrift in Service - mittlere Größe, Abstand */
@@ -761,26 +912,159 @@ footer .container {
 
 /* Responsive Design - für kleine Bildschirme */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column; /* Vertikale Navigation */
-    gap: 10px; /* Abstand */
+  :root {
+    --brand-logo-height: 80px;
+    --scroll-bar-height: 60px;
+    --about-btn-y: -5px;
+    --about-btn-x: 20px;
+    --about-text-size: 14px;
+    --contact-text-size: 14px;
+    --privacy-header-padding: 60px;
+    --privacy-back-btn-top: 50px;
+    --privacy-back-btn-left: 20px;
+  }
+
+  nav.top-nav {
+    padding: 15px 20px;
+  }
+
+  .nav-left {
+    gap: 10px;
+  }
+
+  .nav-left .hamburger,
+  .nav-left .about-btn,
+  .contact-btn {
+    font-size: 16px;
   }
 
   .brand-logo {
-    position: static;
-    transform: translateY(var(--brand-logo-y));
-    margin: 0 auto;
+    height: var(--brand-logo-height) !important;
   }
 
-  nav ul {
-    flex-wrap: wrap; /* Umbrechen */
-    justify-content: center; /* Zentrieren */
+  .scroll-bar {
+    height: var(--scroll-bar-height);
   }
-  .hero h2 {
-    font-size: 3em; /* Kleinere Überschrift für Mobile */
+
+  .scroll-logo {
+    height: 45px;
   }
-  .service-list {
-    flex-direction: column; /* Vertikale Services */
+
+  .slide-menu {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .slide-menu h2 {
+    font-size: 1.5em;
+  }
+
+  .slide-menu ul li {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  #page-contact,
+  #page-privacy {
+    padding-top: 80px;
+  }
+
+  .contact-logo {
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .privacy-header {
+    padding: var(--privacy-header-padding) 20px 20px;
+  }
+
+  .privacy-page h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  .privacy-page h2 {
+    font-size: 1.4em;
+    margin: 20px 0 10px;
+  }
+
+  .privacy-page p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .back-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .contact-content {
+    padding: 20px;
+  }
+
+  .contact-content h1 {
+    font-size: 1.8em;
+  }
+
+  .contact-content p {
+    font-size: 14px;
+  }
+
+  .contact-info {
+    gap: 15px;
+  }
+
+  .contact-info div {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --brand-logo-height: 60px;
+    --scroll-bar-height: 50px;
+    --about-text-size: 12px;
+    --contact-text-size: 12px;
+    --privacy-header-padding: 50px;
+  }
+
+  nav.top-nav {
+    padding: 12px 15px;
+  }
+
+  .brand-logo {
+    height: var(--brand-logo-height) !important;
+  }
+
+  .slide-menu {
+    width: 90%;
+  }
+
+  .slide-menu ul li {
+    font-size: 14px;
+  }
+
+  #page-contact,
+  #page-privacy {
+    padding-top: 70px;
+  }
+
+  .privacy-page h1 {
+    font-size: 1.5em;
+  }
+
+  .privacy-page h2 {
+    font-size: 1.2em;
+  }
+
+  .privacy-page p,
+  .contact-content p {
+    font-size: 13px;
+  }
+
+  .contact-btn {
+    font-size: 14px;
   }
 }
 
@@ -888,8 +1172,9 @@ footer .container {
 }
 
 .contact-logo {
-  height: 60px;
+  height: var(--contact-logo-height);
   width: auto;
+  transform: translateX(var(--contact-logo-x));
 }
 
 /* Kontakt Main Section */
@@ -982,6 +1267,15 @@ footer .container {
    DATENSCHUTZ PAGE STYLING (Steinway-Stil)
    ============================================ */
 
+/* Standard: Datenschutz-Leisten erst zeigen, wenn die Datenschutz-Seite aktiv ist */
+.privacy-nav,
+.scroll-bar-privacy,
+.privacy-back-btn,
+.privacy-brand-logo,
+.privacy-scroll-logo {
+  display: none;
+}
+
 /* Datenschutz Navigation - wie Homepage */
 .privacy-nav {
   position: fixed;
@@ -996,16 +1290,21 @@ footer .container {
   align-items: center;
 }
 
+body.privacy-view .privacy-nav {
+  display: flex;
+  z-index: 1200;
+}
+
 /* Weiße Scroll-Leiste für Datenschutz */
 .scroll-bar-privacy {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: var(--scroll-bar-height);
+  height: var(--privacy-scroll-bar-height, var(--scroll-bar-height));
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
-  z-index: 19;
+  z-index: 1190;
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.4s ease-out, opacity 0.4s ease-out;
@@ -1014,6 +1313,10 @@ footer .container {
 body.privacy-scrolled .scroll-bar-privacy {
   transform: translateY(0);
   opacity: 1;
+}
+
+body.privacy-view .scroll-bar-privacy {
+  display: block;
 }
 
 /* Logo für Datenschutz-Seite (großes Logo oben) */
@@ -1028,6 +1331,10 @@ body.privacy-scrolled .scroll-bar-privacy {
   pointer-events: none;
 }
 
+body.privacy-view .privacy-brand-logo {
+  display: block;
+}
+
 /* Logo für Scroll-Leiste auf Datenschutz */
 .privacy-scroll-logo {
   display: none;
@@ -1035,7 +1342,7 @@ body.privacy-scrolled .scroll-bar-privacy {
   top: 5px;
   left: 50%;
   transform: translate(-50%, -20px);
-  height: calc(var(--scroll-bar-height) - 10px);
+  height: calc(var(--privacy-scroll-bar-height, var(--scroll-bar-height)) - 10px);
   width: auto;
   z-index: 22;
   pointer-events: none;
@@ -1051,6 +1358,18 @@ body.privacy-scrolled .privacy-scroll-logo {
 
 body.privacy-scrolled .privacy-brand-logo {
   display: none;
+}
+
+body.privacy-view .privacy-scroll-logo {
+  display: none;
+}
+
+body.privacy-view.privacy-scrolled .privacy-brand-logo {
+  display: none;
+}
+
+body.privacy-view.privacy-scrolled .privacy-scroll-logo {
+  display: block;
 }
 
 /* Zurück Button in der weißen Leiste */
@@ -1075,6 +1394,11 @@ body.privacy-scrolled .privacy-back-btn {
   opacity: 1;
 }
 
+body.privacy-view.privacy-scrolled .privacy-back-btn {
+  display: block;
+  opacity: 1;
+}
+
 .privacy-back-btn:hover {
   opacity: 0.7;
 }
@@ -1089,7 +1413,17 @@ body.privacy-scrolled .privacy-back-btn {
   position: relative;
   border-bottom: none;
   padding-top: var(--privacy-header-padding);
-  border-bottom: 1px solid #eee;
+  min-height: 220px;
+}
+
+.privacy-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--privacy-header-border-top);
+  height: var(--privacy-header-border-height);
+  background: #eee;
 }
 
 .privacy-header .back-button {
@@ -1099,8 +1433,14 @@ body.privacy-scrolled .privacy-back-btn {
 }
 
 .privacy-logo {
-  height: 60px;
+  height: var(--privacy-logo-height);
   width: auto;
+  position: absolute;
+  left: 50%;
+  top: var(--privacy-logo-top);
+  transform: translateX(calc(-50% + var(--privacy-logo-x))) translateY(var(--privacy-logo-y));
+  pointer-events: none;
+  z-index: 5;
 }
 
 .privacy-page {

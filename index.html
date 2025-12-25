@@ -9,11 +9,11 @@
 
   <!-- Favicon / Website-Icon (Browser-Tab + Google) -->
   <!-- Safari cached Favicons sehr aggressiv: deshalb URL-Encoding + ?v=2 als Cache-Buster -->
-  <link rel="icon" type="image/png" href="images/Logo Kein_Name.png?v=12">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo Kein_Name.png?v=12">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/Logo Kein_Name.png?v=12">
-  <link rel="shortcut icon" href="images/Logo Kein_Name.png?v=12">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/Logo Kein_Name.png?v=12">
+  <link rel="icon" type="image/png" href="images/End_Logo_Transparent.png?v=13">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/End_Logo_Transparent.png?v=13">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/End_Logo_Transparent.png?v=13">
+  <link rel="shortcut icon" href="images/End_Logo_Transparent.png?v=13">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/End_Logo_Transparent.png?v=13">
 
   <!-- Social / Vorschau-Bild (WhatsApp, Facebook, etc.). Für Google ist das auch hilfreich. -->
   <meta property="og:type" content="website">
@@ -42,6 +42,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
   <body>
+    <script>
+      // Cleanup corrupted hero settings immediately
+      (function() {
+        const h = localStorage.getItem('hero_height');
+        if (h && (parseInt(h) < 300 || parseInt(h) > 1500 || isNaN(parseInt(h)))) {
+          localStorage.removeItem('hero_height');
+          localStorage.removeItem('hero_pos');
+        }
+      })();
+    </script>
     <!-- Header mit Navigation -->
     <header>
       <!-- Weiße Scroll-Leiste -->
@@ -79,7 +89,7 @@
       <!-- Slide-Out Menu (weiß, links) -->
       <div class="slide-menu" id="slideMenu">
         <!-- X Button oben links -->
-        <button class="menu-close" id="menuClose" aria-label="Menü schließen">&times;</button>
+        <button class="menu-close" id="menuClose" aria-label="Menü schließen" onclick="document.body.classList.remove('menu-open'); return false;">&times;</button>
         
         <!-- Bild neben dem X (oben) -->
         <img src="images/Logo%20Kein_Name.png" alt="Atelier St. Ioseph" class="menu-top-image">
@@ -115,6 +125,7 @@
       <!-- Hero-Bereich - Willkommens-Sektion -->
       <section id="home" class="hero">
         <!-- Nur das Bild, kein Text -->
+        <img src="images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg" alt="Atelier St. Ioseph" class="hero-image">
       </section>
 
       <!-- Über uns Sektion -->
@@ -123,9 +134,34 @@
           <!-- Überschrift - ändere für anderen Titel -->
           <h2>Über Mich</h2>
           <!-- Absätze mit Text - ändere für andere Inhalte -->
-          <p>Willkommen in der Welt der Ikonenmalerei, wo Tradition und Moderne sich treffen. Im Atelier St. Ioseph widmen wir uns seit Jahren der Kunst der byzantinischen Ikonenmalerei. Jede Ikone wird mit höchster Hingabe und Präzision geschaffen, um nicht nur ästhetische Schönheit zu vermitteln, sondern auch spirituelle Tiefe und Ruhe.</p>
-          <p>Unsere Arbeit beginnt mit der Auswahl der feinsten Materialien: Holztafeln aus nachhaltigen Quellen, Pigmente aus natürlichen Farben und Blattgold für die vergoldeten Details. Der Prozess ist meditativ und erfordert Geduld – von der Skizze über die Grundierung bis zur finalen Veredelung. Jede Ikone erzählt eine Geschichte und dient als Brücke zwischen dem Betrachter und dem Göttlichen.</p>
-          <p>Wir glauben, dass Kunst das Leben bereichern kann. Deshalb bieten wir nicht nur handgemalte Ikonen an, sondern auch Workshops, Beratungen und individuelle Anfertigungen. Entdecken Sie die Schönheit der traditionellen Kunst in einer modernen Welt.</p>
+          <p>Ich male Ikonen, weil mich diese Kunstform durch ihre Klarheit und ihre Tiefe anspricht. Besonders interessieren mich die dargestellten Heiligen, ihr Ausdruck und die vielen Details, die eine Figur unverwechselbar machen. Beim Malen geht es mir darum, genau hinzusehen und jede Form bewusst auszuarbeiten.</p>
+          <p>Eine Ikone entsteht für mich langsam und in mehreren Arbeitsschritten. Zeit, Geduld und Sorgfalt sind ein fester Teil dieses Prozesses. Gerade diese Ruhe und Konzentration sind es, die mich an der Ikonenmalerei faszinieren.</p>
+          <p>Alle Arbeiten entstehen von Hand. Diese Website zeigt eine Auswahl meiner Ikonen und gibt einen Einblick in meine Arbeitsweise.</p>
+        </div>
+
+        <!-- Galerie mit 3 Bildern -->
+        <div class="gallery-container">
+          <div class="gallery-item">
+            <img src="images/Maria_Ikone.jpeg" alt="Maria Ikone">
+            <div class="gallery-overlay">
+              <h3>Maria Ikone</h3>
+              <p>Handgemaltes Unikat</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/Jesus_Ikone.jpeg" alt="Jesus Ikone">
+            <div class="gallery-overlay">
+              <h3>Jesus Ikone</h3>
+              <p>Traditionelle Malerei</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg" alt="Ikonenmalerei 3">
+            <div class="gallery-overlay">
+              <h3>Ikonenmalerei</h3>
+              <p>Meisterwerk</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -209,7 +245,7 @@
     <div id="page-contact" class="page-wrapper hidden">
       <header class="contact-header">
         <button id="backToHome" class="back-button" aria-label="Zurück zur Startseite">← Zurück</button>
-        <img src="images/Logo_Schwarz.png?v=8" alt="Atelier St. Ioseph" class="contact-logo">
+        <img src="images/End_Logo_Transparent.png" alt="Atelier St. Ioseph" class="contact-logo">
       </header>
 
       <section class="contact-page">
@@ -237,7 +273,7 @@
     <div id="page-privacy" class="page-wrapper hidden">
       <header class="privacy-header">
         <button id="backToHomeFromPrivacy" class="back-button" aria-label="Zurück zur Startseite">← Zurück</button>
-        <img src="images/Logo_Schwarz.png?v=8" alt="Atelier St. Ioseph" class="privacy-logo">
+        <img src="images/End_Logo_Transparent.png" alt="Atelier St. Ioseph" class="privacy-logo">
       </header>
 
       <!-- Weiße Scroll-Leiste für Datenschutz -->
@@ -245,7 +281,6 @@
       
       <nav class="privacy-nav">
         <button class="privacy-back-btn" id="privacyBackBtn" aria-label="Zurück zur Startseite">← Zurück</button>
-        <img src="images/End_Logo_Transparent.png" alt="Atelier St. Ioseph" class="privacy-brand-logo">
         <img src="images/Logo%20Kein_Name.png" alt="Atelier St. Ioseph" class="privacy-scroll-logo">
       </nav>
 
@@ -414,7 +449,7 @@
 
     <!-- JavaScript für langsames Scrolling bei allen Links -->
     <script>
-      // Funktion für langsames Scrolling
+      // Funktion für sanftes Scrolling
       function smoothScrollTo(element, duration) {
         const targetPosition = element.offsetTop;
         const startPosition = window.pageYOffset;
@@ -430,10 +465,13 @@
         }
 
         function ease(t, b, c, d) {
-          t /= d / 2;
-          if (t < 1) return c / 2 * t * t + b;
-          t--;
-          return -c / 2 * (t * (t - 2) - 1) + b;
+          // Cubic-bezier easing: smooth, sanft
+          t /= d;
+          if (t < 0.5) {
+            return c * 4 * t * t * t + b;
+          } else {
+            return c * (1 - Math.pow(-2 * t + 2, 3) / 2) + b;
+          }
         }
 
         requestAnimationFrame(animation);
@@ -448,7 +486,7 @@
           const targetId = this.getAttribute('href').substring(1); // Holt die ID ohne #
           const target = document.getElementById(targetId);
           if (target) {
-            smoothScrollTo(target, 1000); // 1000ms sanftes Scrollen
+            smoothScrollTo(target, 800); // 800ms sanftes Scrollen
           }
         });
       });
@@ -530,11 +568,13 @@
           // Nicht in der Kontakt-Ansicht anwenden
           if (document.body.classList.contains('contact-view')) {
             document.body.classList.remove('scrolled');
+            document.body.classList.remove('privacy-scrolled');
             return;
           }
           
           // Für Datenschutz-Seite
           if (!document.getElementById('page-privacy').classList.contains('hidden')) {
+            document.body.classList.remove('scrolled');
             if (window.scrollY > 10) {
               document.body.classList.add('privacy-scrolled');
             } else {
@@ -548,55 +588,48 @@
             document.body.classList.add('scrolled');
           } else {
             document.body.classList.remove('scrolled');
+            document.body.classList.remove('privacy-scrolled');
           }
         }
 
         window.addEventListener('scroll', updateScrollState);
         window.addEventListener('load', updateScrollState);
       })();
-      // === SLIDE-OUT MENU TOGGLE ===
+      // === SLIDE-OUT MENU TOGGLE (SUPER SIMPLE) ===
       (function() {
         const menuToggle = document.getElementById('menuToggle');
         const menuClose = document.getElementById('menuClose');
-        const slideMenu = document.getElementById('slideMenu');
         const menuBackdrop = document.getElementById('menuBackdrop');
         const menuLinks = document.querySelectorAll('.menu-link');
-
-        console.log('Menu Close Button:', menuClose);
-        console.log('Menu Close computed style:', menuClose ? window.getComputedStyle(menuClose) : 'null');
+        const slideMenu = document.getElementById('slideMenu');
 
         // Menü öffnen
-        menuToggle.addEventListener('click', function() {
-          console.log('Opening menu');
-          document.body.classList.add('menu-open');
-          setTimeout(() => {
-            console.log('Menu Close visibility after open:', window.getComputedStyle(menuClose).visibility);
-            console.log('Menu Close z-index after open:', window.getComputedStyle(menuClose).zIndex);
-          }, 100);
-        });
-
-        // Menü schließen (X Button) - DIREKT
-        menuClose.addEventListener('click', function(e) {
-          console.log('CLOSE BUTTON CLICKED!!!');
-          e.preventDefault();
-          e.stopPropagation();
-          document.body.classList.remove('menu-open');
-          return false;
-        }, true);
-
-        // Menü schließen (Backdrop klick)
-        menuBackdrop.addEventListener('click', function() {
-          console.log('Backdrop clicked');
-          document.body.classList.remove('menu-open');
-        });
-
-        // Menü schließen (Link klick)
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            document.body.classList.remove('menu-open');
+        if (menuToggle) {
+          menuToggle.addEventListener('click', function() {
+            document.body.classList.add('menu-open');
           });
+        }
+
+        // Menü schließen (alle Wege)
+        if (menuClose) menuClose.addEventListener('click', closeMenu);
+        if (menuBackdrop) menuBackdrop.addEventListener('click', closeMenu);
+        menuLinks.forEach(link => {
+          link.addEventListener('click', closeMenu);
         });
+
+        // Jede Linksklick-Aktion schließt das Menü (außer der Klick ist auf den Toggle selbst)
+        document.addEventListener('click', function(e) {
+          if (!document.body.classList.contains('menu-open')) return;
+          if (menuToggle && menuToggle.contains(e.target)) return;
+          // Falls wir innen im Slide-Menu klicken: trotzdem schließen (Wunsch: Linksklick schließt)
+          closeMenu();
+        });
+
+        function closeMenu() {
+          document.body.classList.remove('menu-open');
+        }
       })();
+
 
       // === PAGE NAVIGATION (Home vs Kontakt) ===
       (function() {
@@ -611,6 +644,7 @@
         const privacyBackBtn = document.getElementById('privacyBackBtn');
 
         function showContactPage() {
+          document.body.classList.remove('privacy-view', 'privacy-scrolled');
           // Home nach links raus, Kontakt von rechts rein
           pageHome.classList.add('slide-out-left');
           pageContact.classList.remove('hidden');
@@ -632,7 +666,7 @@
           pageContact.classList.add('slide-out-right');
           pageHome.classList.remove('hidden');
           pageHome.classList.add('slide-in-left');
-          document.body.classList.remove('contact-view');
+          document.body.classList.remove('contact-view', 'privacy-view', 'privacy-scrolled');
           
           setTimeout(() => {
             pageContact.classList.add('hidden');
@@ -649,6 +683,8 @@
           pagePrivacy.classList.remove('hidden');
           pagePrivacy.classList.add('slide-in-right');
           document.body.classList.remove('menu-open');
+          document.body.classList.add('privacy-view');
+          document.body.classList.remove('contact-view', 'privacy-scrolled');
 
           setTimeout(() => {
             pageHome.classList.add('hidden');
@@ -664,6 +700,7 @@
           pagePrivacy.classList.add('slide-out-right');
           pageHome.classList.remove('hidden');
           pageHome.classList.add('slide-in-left');
+          document.body.classList.remove('privacy-view', 'privacy-scrolled');
 
           setTimeout(() => {
             pagePrivacy.classList.add('hidden');
