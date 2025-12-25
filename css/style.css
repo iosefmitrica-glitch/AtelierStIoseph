@@ -407,9 +407,9 @@ body.menu-open .about-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border-bottom: 1px solid #eee;
-  margin-top: 50px;
+  margin-top: 0;
 }
 
 .menu-logo {
@@ -1024,8 +1024,8 @@ footer .container {
   :root {
     --brand-logo-height: 60px;
     --scroll-bar-height: 50px;
-    --about-text-size: 12px;
-    --contact-text-size: 12px;
+    --about-text-size: 11px;
+    --contact-text-size: 11px;
     --privacy-header-padding: 50px;
   }
 
@@ -1063,7 +1063,23 @@ footer .container {
     font-size: 13px;
   }
 
+  .about-btn {
+    font-size: var(--about-text-size);
+    gap: 4px;
+    padding: 0;
+  }
+
+  .about-icon {
+    font-size: 14px;
+  }
+
   .contact-btn {
+    font-size: 12px;
+    gap: 4px;
+    padding: 0 4px;
+  }
+
+  .contact-icon {
     font-size: 14px;
   }
 }
