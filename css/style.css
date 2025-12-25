@@ -930,23 +930,8 @@ footer .container {
     padding: 15px 20px;
   }
 
-  .contact-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 14px;
-    z-index: 1200;
-  }
-
-  .back-button {
-    left: 14px;
-    top: 10px;
-    font-size: 14px;
-  }
-
   .contact-page {
-    padding: 120px 16px 32px;
+    padding: 60px 16px 32px;
   }
 
   .nav-left {
@@ -1082,23 +1067,8 @@ footer .container {
     padding: 12px 15px;
   }
 
-  .contact-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 10px 12px;
-    z-index: 1200;
-  }
-
-  .back-button {
-    left: 12px;
-    top: 8px;
-    font-size: 13px;
-  }
-
   .contact-page {
-    padding: 112px 14px 28px;
+    padding: 50px 14px 28px;
   }
 
   .brand-logo {
@@ -1228,46 +1198,22 @@ footer .container {
    KONTAKT PAGE STYLING
    ============================================ */
 
-/* Kontakt Header - mit Zurück Button */
+/* Kontakt Header - versteckt, nur Scroll-Leiste wird verwendet */
 .contact-header {
-  background: #fff;
-  padding: 20px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1200;
-  border-bottom: 1px solid #f0f0f0;
+  display: none;
 }
 
 .back-button {
-  position: absolute;
-  left: 30px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #333;
-  font-family: 'Ovo', serif;
-  transition: color 0.3s;
-}
-
-.back-button:hover {
-  color: #000;
+  display: none;
 }
 
 .contact-logo {
-  height: var(--contact-logo-height);
-  width: auto;
-  transform: translateX(var(--contact-logo-x));
+  display: none;
 }
 
 /* Kontakt Main Section */
 .contact-page {
-  padding: 120px 30px 60px;
+  padding: 80px 30px;
   background: #fff;
   min-height: calc(100vh - 200px);
 }
