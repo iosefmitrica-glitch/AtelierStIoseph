@@ -1355,32 +1355,22 @@ footer .container {
    KONTAKT SCROLL BAR & NAV (wie Datenschutz)
    ============================================ */
 
-/* Standard: Kontakt-Leisten erst zeigen, wenn die Kontakt-Seite aktiv ist */
-.contact-nav,
-.scroll-bar-contact,
-.contact-back-btn,
-.contact-brand-logo,
-.contact-scroll-logo {
-  display: none;
-}
-
-/* Kontakt Navigation - wie Homepage */
+/* Kontakt Navigation - fixiert transparent, wird beim Scrollen sichtbar */
 .contact-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 1200;
   background: transparent;
   padding: 20px 30px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
 body.contact-view .contact-nav {
   display: flex;
-  z-index: 1200;
 }
 
 /* Weiße Scroll-Leiste für Kontakt */
@@ -1396,6 +1386,11 @@ body.contact-view .contact-nav {
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  display: none;
+}
+
+body.contact-view .scroll-bar-contact {
+  display: block;
 }
 
 body.contact-scrolled .scroll-bar-contact {
@@ -1403,27 +1398,7 @@ body.contact-scrolled .scroll-bar-contact {
   opacity: 1;
 }
 
-body.contact-view .scroll-bar-contact {
-  display: block;
-}
-
-/* Logo für Kontakt-Seite (großes Logo oben) */
-.contact-brand-logo {
-  height: var(--brand-logo-height);
-  width: auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) translateY(var(--brand-logo-y));
-  z-index: 1;
-  pointer-events: none;
-}
-
-body.contact-view .contact-brand-logo {
-  display: block;
-}
-
-/* Logo für Scroll-Leiste auf Kontakt */
+/* Logo für Scroll-Leiste auf Kontakt (kleines Logo in weißer Leiste) */
 .contact-scroll-logo {
   display: none;
   position: fixed;
@@ -1432,32 +1407,16 @@ body.contact-view .contact-brand-logo {
   transform: translate(-50%, -20px);
   height: calc(var(--scroll-bar-height) - 10px);
   width: auto;
-  z-index: 22;
+  z-index: 1200;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
-body.contact-scrolled .contact-scroll-logo {
+body.contact-view.contact-scrolled .contact-scroll-logo {
   display: block;
   opacity: 1;
   transform: translate(-50%, 0);
-}
-
-body.contact-scrolled .contact-brand-logo {
-  display: none;
-}
-
-body.contact-view .contact-scroll-logo {
-  display: none;
-}
-
-body.contact-view.contact-scrolled .contact-brand-logo {
-  display: none;
-}
-
-body.contact-view.contact-scrolled .contact-scroll-logo {
-  display: block;
 }
 
 /* Zurück Button in der weißen Leiste */
@@ -1472,14 +1431,9 @@ body.contact-view.contact-scrolled .contact-scroll-logo {
   color: #000;
   font-family: 'Ovo', serif;
   transition: opacity 0.3s;
-  z-index: 23;
+  z-index: 1200;
   display: none;
   opacity: 0;
-}
-
-body.contact-scrolled .contact-back-btn {
-  display: block;
-  opacity: 1;
 }
 
 body.contact-view.contact-scrolled .contact-back-btn {
