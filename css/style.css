@@ -1352,7 +1352,147 @@ footer .container {
 }
 
 /* ============================================
-   DATENSCHUTZ PAGE STYLING (Steinway-Stil)
+   KONTAKT SCROLL BAR & NAV (wie Datenschutz)
+   ============================================ */
+
+/* Standard: Kontakt-Leisten erst zeigen, wenn die Kontakt-Seite aktiv ist */
+.contact-nav,
+.scroll-bar-contact,
+.contact-back-btn,
+.contact-brand-logo,
+.contact-scroll-logo {
+  display: none;
+}
+
+/* Kontakt Navigation - wie Homepage */
+.contact-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: transparent;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.contact-view .contact-nav {
+  display: flex;
+  z-index: 1200;
+}
+
+/* Weiße Scroll-Leiste für Kontakt */
+.scroll-bar-contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--scroll-bar-height);
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  z-index: 1190;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+body.contact-scrolled .scroll-bar-contact {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+body.contact-view .scroll-bar-contact {
+  display: block;
+}
+
+/* Logo für Kontakt-Seite (großes Logo oben) */
+.contact-brand-logo {
+  height: var(--brand-logo-height);
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(var(--brand-logo-y));
+  z-index: 1;
+  pointer-events: none;
+}
+
+body.contact-view .contact-brand-logo {
+  display: block;
+}
+
+/* Logo für Scroll-Leiste auf Kontakt */
+.contact-scroll-logo {
+  display: none;
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, -20px);
+  height: calc(var(--scroll-bar-height) - 10px);
+  width: auto;
+  z-index: 22;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+body.contact-scrolled .contact-scroll-logo {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+body.contact-scrolled .contact-brand-logo {
+  display: none;
+}
+
+body.contact-view .contact-scroll-logo {
+  display: none;
+}
+
+body.contact-view.contact-scrolled .contact-brand-logo {
+  display: none;
+}
+
+body.contact-view.contact-scrolled .contact-scroll-logo {
+  display: block;
+}
+
+/* Zurück Button in der weißen Leiste */
+.contact-back-btn {
+  position: fixed;
+  left: var(--privacy-scroll-back-left);
+  top: var(--privacy-scroll-back-top);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  font-family: 'Ovo', serif;
+  transition: opacity 0.3s;
+  z-index: 23;
+  display: none;
+  opacity: 0;
+}
+
+body.contact-scrolled .contact-back-btn {
+  display: block;
+  opacity: 1;
+}
+
+body.contact-view.contact-scrolled .contact-back-btn {
+  display: block;
+  opacity: 1;
+}
+
+.contact-back-btn:hover {
+  opacity: 0.7;
+}
+
+/* ============================================
+   DATENSCHUTZ PAGE STYLING 
    ============================================ */
 
 /* Standard: Datenschutz-Leisten erst zeigen, wenn die Datenschutz-Seite aktiv ist */

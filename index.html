@@ -240,6 +240,16 @@
 
     <!-- SEITE 2: KONTAKT - Separate Kontakt Seite -->
     <div id="page-contact" class="page-wrapper hidden">
+      <!-- Weiße Scroll-Leiste für Kontakt -->
+      <div class="scroll-bar-contact"></div>
+      
+      <!-- Kontakt Navigation - fixiert oben -->
+      <nav class="contact-nav">
+        <button class="contact-back-btn" id="contactBackBtn" aria-label="Zurück zur Startseite">← Zurück</button>
+        <img src="images/Logo%20Kein_Name.png" alt="Atelier St. Ioseph" class="contact-brand-logo">
+        <img src="images/Logo%20Kein_Name.png" alt="Atelier St. Ioseph" class="contact-scroll-logo">
+      </nav>
+      
       <header class="contact-header">
         <button id="backToHome" class="back-button" aria-label="Zurück zur Startseite">← Zurück</button>
         <img src="images/End_Logo_Transparent.png" alt="Atelier St. Ioseph" class="contact-logo">
@@ -562,16 +572,22 @@
       // === SCROLL STATE: Header shows white bar only when scrolled ===
       (function() {
         function updateScrollState() {
-          // Nicht in der Kontakt-Ansicht anwenden
+          // Für Kontakt-Seite
           if (document.body.classList.contains('contact-view')) {
             document.body.classList.remove('scrolled');
             document.body.classList.remove('privacy-scrolled');
+            if (window.scrollY > 10) {
+              document.body.classList.add('contact-scrolled');
+            } else {
+              document.body.classList.remove('contact-scrolled');
+            }
             return;
           }
           
           // Für Datenschutz-Seite
           if (!document.getElementById('page-privacy').classList.contains('hidden')) {
             document.body.classList.remove('scrolled');
+            document.body.classList.remove('contact-scrolled');
             if (window.scrollY > 10) {
               document.body.classList.add('privacy-scrolled');
             } else {
@@ -581,6 +597,7 @@
           }
           
           // Für Homepage
+          document.body.classList.remove('contact-scrolled');
           if (window.scrollY > 10) {
             document.body.classList.add('scrolled');
           } else {
@@ -753,6 +770,15 @@
           privacyBackBtn.addEventListener('click', function(e) {
             e.preventDefault();
             backHomeFromPrivacy();
+          });
+        }
+
+        // Click auf Zurück in Scroll-Leiste (Kontakt) -> zeige Home-Seite
+        const contactBackBtn = document.getElementById('contactBackBtn');
+        if (contactBackBtn) {
+          contactBackBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showHomePage();
           });
         }
       })();
