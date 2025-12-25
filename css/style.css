@@ -1008,7 +1008,7 @@ footer .container {
 
   #page-contact,
   #page-privacy {
-    padding-top: 80px;
+    padding-top: 0;
   }
 
   .contact-logo {
@@ -1105,7 +1105,7 @@ footer .container {
 
   #page-contact,
   #page-privacy {
-    padding-top: 70px;
+    padding-top: 0;
   }
 
   .privacy-page h1 {
