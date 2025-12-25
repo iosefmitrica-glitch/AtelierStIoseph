@@ -917,7 +917,7 @@ footer .container {
     --scroll-bar-height: 60px;
     --about-btn-y: -4px;
     --about-btn-x: 14px;
-    --about-text-size: 11px;
+    --about-text-size: 8px;
     --contact-text-size: 12px;
     --privacy-header-padding: 60px;
     --privacy-back-btn-top: 50px;
@@ -930,6 +930,11 @@ footer .container {
 
   .nav-left {
     gap: 6px;
+  }
+
+  /* Hide the About button on mobile to declutter the top bar */
+  .about-btn {
+    display: none;
   }
 
   .nav-left .hamburger,
