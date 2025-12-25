@@ -913,14 +913,14 @@ footer .container {
 /* Responsive Design - für kleine Bildschirme */
 @media (max-width: 768px) {
   :root {
-    --brand-logo-height: 180px;
+    --brand-logo-height: 140px;
     --scroll-bar-height: 60px;
     --about-btn-y: -4px;
     --about-btn-x: 14px;
     --about-text-size: 8px;
     --contact-text-size: 12px;
-    --contact-logo-height: 120px;
-    --contact-logo-x: 0px;
+    --contact-logo-height: 100px;
+    --contact-logo-x: -20px;
     --privacy-header-padding: 60px;
     --privacy-back-btn-top: 50px;
     --privacy-back-btn-left: 20px;
@@ -1028,7 +1028,7 @@ footer .container {
   }
 
   .contact-logo {
-    height: 90px;
+    height: 100px;
   }
 
   .contact-page {
@@ -1083,12 +1083,12 @@ footer .container {
 
 @media (max-width: 480px) {
   :root {
-    --brand-logo-height: 140px;
+    --brand-logo-height: 110px;
     --scroll-bar-height: 50px;
     --about-text-size: 11px;
     --contact-text-size: 11px;
-    --contact-logo-height: 90px;
-    --contact-logo-x: 0px;
+    --contact-logo-height: 75px;
+    --contact-logo-x: -15px;
     --privacy-header-padding: 50px;
   }
 
@@ -1144,7 +1144,7 @@ footer .container {
   }
 
   .contact-logo {
-    height: 70px;
+    height: 75px;
   }
 
   .contact-page {
