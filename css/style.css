@@ -1039,19 +1039,32 @@ footer .container {
     padding: var(--privacy-header-padding) 20px 20px;
   }
 
+  .privacy-page {
+    padding: 30px 20px;
+  }
+
   .privacy-page h1 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin-bottom: 15px;
   }
 
   .privacy-page h2 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin: 20px 0 10px;
   }
 
+  .privacy-page h3 {
+    font-size: 1.05em;
+  }
+
   .privacy-page p {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.6;
+  }
+
+  .privacy-page ul,
+  .privacy-page li {
+    font-size: 13px;
   }
 
   .back-btn {
@@ -1151,17 +1164,31 @@ footer .container {
     padding: 32px 14px 28px;
   }
 
+  .privacy-page {
+    padding: 25px 15px;
+  }
+
   .privacy-page h1 {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 
   .privacy-page h2 {
-    font-size: 1.2em;
+    font-size: 1.1em;
+  }
+
+  .privacy-page h3 {
+    font-size: 1em;
   }
 
   .privacy-page p,
   .contact-content p {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .privacy-page ul,
+  .privacy-page li {
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .about-btn {
@@ -1656,7 +1683,7 @@ body.privacy-view.privacy-scrolled .privacy-back-btn {
 }
 
 .privacy-page {
-  padding: 80px 30px;
+  padding: 50px 30px;
   background: #fff;
   min-height: calc(100vh - 200px);
 }
