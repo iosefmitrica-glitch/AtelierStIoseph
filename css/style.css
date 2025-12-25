@@ -159,7 +159,7 @@ nav.top-nav {
   z-index: 1001; /* Über scroll-bar */
   background: transparent;
   padding: 20px 30px;
-  max-width: 100%;
+  padding: 20px 30px;
   margin: 0;
 }
 
@@ -1040,7 +1040,7 @@ footer .container {
   }
 
   .privacy-page {
-    padding: 30px 20px;
+    padding: 15px 20px;
   }
 
   .privacy-page h1 {
@@ -1165,7 +1165,7 @@ footer .container {
   }
 
   .privacy-page {
-    padding: 25px 15px;
+    padding: 10px 15px;
   }
 
   .privacy-page h1 {
