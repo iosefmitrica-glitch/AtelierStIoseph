@@ -931,16 +931,17 @@ footer .container {
   }
 
   .contact-header {
-    padding: 14px 16px;
+    padding: 8px 12px;
   }
 
   .back-button {
-    left: 16px;
+    left: 12px;
+    top: 8px;
     font-size: 14px;
   }
 
   .contact-page {
-    padding: 40px 20px;
+    padding: 28px 16px;
   }
 
   .nav-left {
@@ -1077,16 +1078,17 @@ footer .container {
   }
 
   .contact-header {
-    padding: 12px 14px;
+    padding: 6px 10px;
   }
 
   .back-button {
-    left: 12px;
+    left: 10px;
+    top: 6px;
     font-size: 13px;
   }
 
   .contact-page {
-    padding: 32px 18px;
+    padding: 24px 14px;
   }
 
   .brand-logo {
