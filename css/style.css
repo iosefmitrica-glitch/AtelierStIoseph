@@ -357,7 +357,7 @@ body.menu-open .about-btn {
 
 /* X Button - innerhalb des Menus */
 .menu-close {
-  background: #fff;
+  background: transparent;
   border: none;
   font-size: 40px;
   font-weight: 300;
@@ -387,7 +387,7 @@ body.menu-open .about-btn {
 
 .menu-close:hover {
   color: #000;
-  background: #f5f5f5;
+  background: transparent;
 }
 
 /* Bild neben dem X (oben rechts) */
@@ -917,8 +917,8 @@ footer .container {
     --scroll-bar-height: 60px;
     --about-btn-y: -5px;
     --about-btn-x: 20px;
-    --about-text-size: 14px;
-    --contact-text-size: 14px;
+    --about-text-size: 12px;
+    --contact-text-size: 12px;
     --privacy-header-padding: 60px;
     --privacy-back-btn-top: 50px;
     --privacy-back-btn-left: 20px;
@@ -936,6 +936,27 @@ footer .container {
   .nav-left .about-btn,
   .contact-btn {
     font-size: 16px;
+  }
+
+  /* Smaller about/contact on tablets/phones */
+  .about-btn {
+    font-size: var(--about-text-size);
+    gap: 4px;
+    padding: 0;
+  }
+
+  .about-icon {
+    font-size: 14px;
+  }
+
+  .contact-btn {
+    font-size: var(--contact-text-size);
+    gap: 4px;
+    padding: 0 4px;
+  }
+
+  .contact-icon {
+    font-size: 14px;
   }
 
   .brand-logo {
