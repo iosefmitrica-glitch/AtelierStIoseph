@@ -1044,8 +1044,11 @@ footer .container {
   }
 
   .privacy-page h1 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
+    font-size: 1.4em;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .privacy-page h2 {
@@ -1169,7 +1172,11 @@ footer .container {
   }
 
   .privacy-page h1 {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .privacy-page h2 {
