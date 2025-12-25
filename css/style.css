@@ -919,6 +919,8 @@ footer .container {
     --about-btn-x: 14px;
     --about-text-size: 8px;
     --contact-text-size: 12px;
+    --contact-logo-height: 120px;
+    --contact-logo-x: 0px;
     --privacy-header-padding: 60px;
     --privacy-back-btn-top: 50px;
     --privacy-back-btn-left: 20px;
@@ -926,6 +928,19 @@ footer .container {
 
   nav.top-nav {
     padding: 15px 20px;
+  }
+
+  .contact-header {
+    padding: 14px 16px;
+  }
+
+  .back-button {
+    left: 16px;
+    font-size: 14px;
+  }
+
+  .contact-page {
+    padding: 40px 20px;
   }
 
   .nav-left {
@@ -1052,11 +1067,26 @@ footer .container {
     --scroll-bar-height: 50px;
     --about-text-size: 11px;
     --contact-text-size: 11px;
+    --contact-logo-height: 90px;
+    --contact-logo-x: 0px;
     --privacy-header-padding: 50px;
   }
 
   nav.top-nav {
     padding: 12px 15px;
+  }
+
+  .contact-header {
+    padding: 12px 14px;
+  }
+
+  .back-button {
+    left: 12px;
+    font-size: 13px;
+  }
+
+  .contact-page {
+    padding: 32px 18px;
   }
 
   .brand-logo {
