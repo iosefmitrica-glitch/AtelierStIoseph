@@ -913,7 +913,7 @@ footer .container {
 /* Responsive Design - für kleine Bildschirme */
 @media (max-width: 768px) {
   :root {
-    --brand-logo-height: 80px;
+    --brand-logo-height: 110px;
     --scroll-bar-height: 60px;
     --about-btn-y: -4px;
     --about-btn-x: 14px;
@@ -1048,7 +1048,7 @@ footer .container {
 
 @media (max-width: 480px) {
   :root {
-    --brand-logo-height: 60px;
+    --brand-logo-height: 90px;
     --scroll-bar-height: 50px;
     --about-text-size: 11px;
     --contact-text-size: 11px;
