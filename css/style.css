@@ -796,7 +796,7 @@ nav a:hover {
   }
 
   .gallery-item {
-    height: calc(var(--gallery-height) * 0.6);
+    height: calc(var(--gallery-height) * 0.9);
   }
 }
 
