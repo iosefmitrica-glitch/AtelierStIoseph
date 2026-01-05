@@ -665,6 +665,15 @@
           document.body.classList.add('contact-view');
           document.body.classList.remove('menu-open');
           
+          // Trigger envelope animation
+          const envelopeIcon = document.querySelector('.contact-icon');
+          if (envelopeIcon) {
+            envelopeIcon.classList.remove('envelope-opened');
+            // Force reflow to restart animation
+            void envelopeIcon.offsetWidth;
+            envelopeIcon.classList.add('envelope-opened');
+          }
+          
           setTimeout(() => {
             pageHome.classList.add('hidden');
             pageHome.classList.remove('slide-out-left');
