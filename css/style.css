@@ -1807,18 +1807,19 @@ body.privacy-view.privacy-scrolled .privacy-back-btn {
 .contact-icon {
   display: inline-block;
   transform-origin: top center;
+  transition: transform 0.3s ease;
 }
 
 .contact-icon.envelope-opened {
-  animation: envelopeOpen 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation: envelopeFlip 1s ease-in-out 1;
 }
 
-@keyframes envelopeOpen {
+@keyframes envelopeFlip {
   0% {
     transform: rotateX(0deg);
   }
-  50% {
-    transform: rotateX(80deg) scale(1.1);
+  40% {
+    transform: rotateX(90deg) scale(1.15);
   }
   100% {
     transform: rotateX(0deg);
