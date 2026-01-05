@@ -1803,29 +1803,6 @@ body.privacy-view.privacy-scrolled .privacy-back-btn {
   margin: 0;
 }
 
-/* Envelope Open Animation */
-.contact-icon {
-  display: inline-block;
-  transform-origin: top center;
-  transition: transform 0.3s ease;
-}
-
-.contact-icon.envelope-opened {
-  animation: envelopeFlip 1s ease-in-out 1;
-}
-
-@keyframes envelopeFlip {
-  0% {
-    transform: rotateX(0deg);
-  }
-  40% {
-    transform: rotateX(90deg) scale(1.15);
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
-}
-
 /* Footer Legal Links */
 .legal-links {
   margin-top: 12px;
