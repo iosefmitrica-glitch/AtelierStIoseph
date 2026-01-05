@@ -665,14 +665,17 @@
           document.body.classList.add('contact-view');
           document.body.classList.remove('menu-open');
           
-          // Trigger envelope animation
-          const envelopeIcon = document.querySelector('.contact-icon');
-          if (envelopeIcon) {
-            envelopeIcon.classList.remove('envelope-opened');
-            // Force reflow to restart animation
-            void envelopeIcon.offsetWidth;
-            envelopeIcon.classList.add('envelope-opened');
-          }
+          // Trigger envelope animation on top button
+          setTimeout(() => {
+            const envelopeIcon = document.querySelector('#contactBtnTop .contact-icon');
+            if (envelopeIcon) {
+              envelopeIcon.classList.add('envelope-opened');
+              // Remove class after animation completes
+              setTimeout(() => {
+                envelopeIcon.classList.remove('envelope-opened');
+              }, 1000);
+            }
+          }, 100);
           
           setTimeout(() => {
             pageHome.classList.add('hidden');
