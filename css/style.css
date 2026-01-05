@@ -4,10 +4,10 @@
   --brand-logo-y: 50px; /* Logo hoch/runter: negativ = hoch, positiv = runter */
   
   /* Weiße Leiste beim Scrollen */
-  --scroll-bar-height: 60px; /* Höhe der weißen Leiste beim Scrollen (z.B. 20px klein, 80px groß) */
+  --scroll-bar-height: 70px; /* Höhe der weißen Leiste beim Scrollen (z.B. 20px klein, 80px groß) */
 
   /* Weiße Leiste nur auf Datenschutz */
-  --privacy-scroll-bar-height: 60px; /* Eigene Höhe für die Datenschutz-Leiste (fällt zurück auf --scroll-bar-height) */
+  --privacy-scroll-bar-height: 70px; /* Eigene Höhe für die Datenschutz-Leiste (fällt zurück auf --scroll-bar-height) */
   
   /* Über Mich Button */
   --about-btn-y: 2px; /* Über Mich hoch/runter: negativ = hoch, positiv = runter */
@@ -37,7 +37,7 @@
   --privacy-logo-x: -30px; /* Horizontale Feinabstimmung (negativ = links, positiv = rechts) */
   
   /* Zurück-Button in weißer Leiste */
-  --privacy-scroll-back-top: 35px; /* Zurück in weißer Leiste: Abstand von oben (z.B. 25px für tiefer) */
+  --privacy-scroll-back-top: 25px; /* Zurück in weißer Leiste: Abstand von oben (z.B. 25px für tiefer) */
   --privacy-scroll-back-left: 50px; /* Zurück in weißer Leiste: Abstand von links (z.B. 50px für rechts) */
 
   /* Logo-Steuerung (nur das Bild!) */
@@ -238,7 +238,8 @@ body.scrolled .brand-logo { display: none; }
   height: 3px;
   background: #ffffff;
   border-radius: 0;
-  transition: 0.3s;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center;
 }
 
 /* Über Mich Button (neben Menu) */
@@ -283,15 +284,16 @@ body.scrolled .about-text {
   color: #000;
 }
 
-/* Hamburger animieren wenn Menu offen */
+/* Hamburger animieren wenn Menu offen - wird zu X */
 body.menu-open .menu-toggle span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+  transform: rotate(45deg) translate(10px, 10px) scaleX(1.1);
 }
 body.menu-open .menu-toggle span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 body.menu-open .menu-toggle span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg) translate(8px, -8px) scaleX(1.1);
 }
 
 /* Kontakt Button (oben rechts) — gleiche Höhe wie Hamburger */
@@ -355,7 +357,7 @@ body.menu-open .about-btn {
   pointer-events: none;
 }
 
-/* X Button - innerhalb des Menus */
+/* X Button - innerhalb des Menus mit Fade + Rotate Animation */
 .menu-close {
   background: transparent;
   border: none;
@@ -363,7 +365,7 @@ body.menu-open .about-btn {
   font-weight: 300;
   cursor: pointer;
   color: #333;
-  transition: 0.3s;
+  transition: color 0.3s ease, transform 0.3s ease;
   padding: 0;
   margin: 0;
   line-height: 1;
@@ -378,6 +380,11 @@ body.menu-open .about-btn {
   justify-content: center;
   opacity: 1;
   visibility: visible;
+  transform: rotate(0deg) scale(1);
+}
+
+body.menu-open .menu-close {
+  animation: fadeInRotate 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .menu-close:active,
@@ -388,6 +395,18 @@ body.menu-open .about-btn {
 .menu-close:hover {
   color: #000;
   background: transparent;
+  transform: rotate(90deg) scale(1.1);
+}
+
+@keyframes fadeInRotate {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 /* Bild neben dem X (oben rechts) */
