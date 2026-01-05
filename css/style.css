@@ -4,10 +4,10 @@
   --brand-logo-y: 50px; /* Logo hoch/runter: negativ = hoch, positiv = runter */
   
   /* Weiße Leiste beim Scrollen */
-  --scroll-bar-height: 90px; /* Höhe der weißen Leiste beim Scrollen (z.B. 20px klein, 80px groß) */
+  --scroll-bar-height: 60px; /* Höhe der weißen Leiste beim Scrollen (z.B. 20px klein, 80px groß) */
 
   /* Weiße Leiste nur auf Datenschutz */
-  --privacy-scroll-bar-height: 90px; /* Eigene Höhe für die Datenschutz-Leiste (fällt zurück auf --scroll-bar-height) */
+  --privacy-scroll-bar-height: 60px; /* Eigene Höhe für die Datenschutz-Leiste (fällt zurück auf --scroll-bar-height) */
   
   /* Über Mich Button */
   --about-btn-y: 2px; /* Über Mich hoch/runter: negativ = hoch, positiv = runter */
