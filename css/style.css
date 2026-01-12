@@ -675,15 +675,15 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   display: block;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  image-rendering: high-quality;
+  image-rendering: auto;
   -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .carousel-slide.active {
