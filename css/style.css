@@ -185,6 +185,9 @@ nav.top-nav {
   opacity: 0;
   transition: transform 0.4s ease-out, opacity 0.4s ease-out;
   pointer-events: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.scrolled .scroll-bar {
@@ -240,6 +243,8 @@ body.scrolled .brand-logo { display: none; }
   border-radius: 0;
   transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 /* Über Mich Button (neben Menu) */
@@ -339,6 +344,9 @@ body.menu-open .menu-toggle span:nth-child(3) {
   transition: left 0.4s ease;
   overflow-y: auto;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  will-change: left;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.menu-open .slide-menu {
@@ -615,6 +623,7 @@ nav a:hover {
   background: #000 url('../images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg') no-repeat center 40%;
   background-size: cover;
   background-attachment: scroll;
+  background-color: #000;
 
   /* Vollständige Höhe des Fensters */
   min-height: 100vh;
@@ -635,6 +644,12 @@ nav a:hover {
   color: #fff; /* Weißer Text über dem Bild */
   position: relative;
   overflow: hidden;
+  
+  /* Performance Optimierungen */
+  will-change: auto;
+  contain: layout style paint;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 .hero-image {
