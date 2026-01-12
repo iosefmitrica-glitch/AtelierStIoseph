@@ -793,50 +793,34 @@
       // Carousel automatischer Bildwechsel (außerhalb der Seiten-Funktionen)
       (function initCarousel() {
         const slides = document.querySelectorAll('.carousel-slide');
-        if (slides.length === 0) return; // Falls keine Slides gefunden
+        if (slides.length === 0) return;
         
         const brandLogo = document.querySelector('.brand-logo');
         let currentSlide = 0;
-        let isAnimating = false;
+
+        function updateLogo(index) {
+          if (brandLogo) {
+            if (index === 0) {
+              brandLogo.setAttribute('src', 'images/Logo_Schwarz.png?v=8');
+            } else {
+              brandLogo.setAttribute('src', 'images/End_Logo_Transparent.png?v=' + Date.now());
+            }
+          }
+        }
 
         function showSlide(index) {
-          if (isAnimating) return;
-          isAnimating = true;
-
-          // Fade to black - aktuelle Slide ausblenden
-          const currentSlideElement = slides[currentSlide];
-          currentSlideElement.style.transition = 'opacity 0.4s ease-in';
-          currentSlideElement.style.opacity = '0';
-
-          // Nach 0.4s: neue Slide einblenden
-          setTimeout(() => {
-            slides.forEach((slide, i) => {
-              slide.classList.remove('active');
-              if (i === index) {
-                slide.classList.add('active');
-                slide.style.transition = 'opacity 0.4s ease-out';
-                slide.style.opacity = '1';
-              }
-            });
-
-            // Logo wechseln: Bei Bild 1 (Index 0) weiß, bei Bild 2 & 3 transparent
-            if (brandLogo) {
-              if (index === 0) {
-                brandLogo.setAttribute('src', 'images/Logo_Schwarz.png?v=8');
-              } else {
-                brandLogo.setAttribute('src', 'images/End_Logo_Transparent.png?v=' + Date.now());
-              }
+          slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+              slide.classList.add('active');
             }
-
-            isAnimating = false;
-          }, 400);
-
-          currentSlide = index;
+          });
+          updateLogo(index);
         }
 
         function nextSlide() {
-          const nextIndex = (currentSlide + 1) % slides.length;
-          showSlide(nextIndex);
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
         }
 
         // Ändere Bild alle 5 Sekunden
