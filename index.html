@@ -125,8 +125,12 @@
     <div id="page-home" class="page-wrapper">
       <!-- Hero-Bereich - Willkommens-Sektion -->
       <section id="home" class="hero">
-        <!-- Nur das Bild, kein Text -->
-        <img src="images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg" alt="Atelier St. Ioseph" class="hero-image">
+        <!-- Bildkarussell Container -->
+        <div class="carousel-container">
+          <img src="images/00CD27A2-8DFE-458E-AE88-184C52603B77_1_201_a.jpeg" alt="Atelier St. Ioseph" class="carousel-slide active">
+          <img src="images/Jesus_Ikone.jpeg" alt="Jesus Ikone" class="carousel-slide">
+          <img src="images/Maria_Ikone.jpeg" alt="Maria Ikone" class="carousel-slide">
+        </div>
       </section>
 
       <!-- Über uns Sektion -->
@@ -784,6 +788,29 @@
             showHomePage();
           });
         }
+
+        // Carousel automatischer Bildwechsel
+        (function initCarousel() {
+          const slides = document.querySelectorAll('.carousel-slide');
+          let currentSlide = 0;
+
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.classList.remove('active');
+              if (i === index) {
+                slide.classList.add('active');
+              }
+            });
+          }
+
+          function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+          }
+
+          // Ändere Bild alle 5 Sekunden
+          setInterval(nextSlide, 5000);
+        })();
       })();
     </script>
   </body>
