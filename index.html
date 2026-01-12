@@ -809,9 +809,9 @@
           // Logo wechseln: Bei Bild 1 (Index 0) weiß, bei Bild 2 & 3 transparent
           if (brandLogo) {
             if (index === 0) {
-              brandLogo.src = 'images/Logo_Schwarz.png?v=8';
+              brandLogo.setAttribute('src', 'images/Logo_Schwarz.png?v=8');
             } else {
-              brandLogo.src = 'images/End_Logo_Transparent.png';
+              brandLogo.setAttribute('src', 'images/End_Logo_Transparent.png?v=' + Date.now());
             }
           }
         }
