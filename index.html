@@ -795,6 +795,7 @@
         const slides = document.querySelectorAll('.carousel-slide');
         if (slides.length === 0) return; // Falls keine Slides gefunden
         
+        const brandLogo = document.querySelector('.brand-logo');
         let currentSlide = 0;
 
         function showSlide(index) {
@@ -804,6 +805,15 @@
               slide.classList.add('active');
             }
           });
+          
+          // Logo wechseln: Bei Bild 1 (Index 0) weiß, bei Bild 2 & 3 transparent
+          if (brandLogo) {
+            if (index === 0) {
+              brandLogo.src = 'images/Logo_Schwarz.png?v=8';
+            } else {
+              brandLogo.src = 'images/End_Logo_Transparent.png';
+            }
+          }
         }
 
         function nextSlide() {
