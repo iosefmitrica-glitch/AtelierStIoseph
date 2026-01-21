@@ -178,7 +178,7 @@ nav.top-nav {
   left: 0;
   right: 0;
   height: var(--scroll-bar-height);
-  background: rgba(240, 233, 218, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
   z-index: 50;
   transform: translateY(-100%);
@@ -239,7 +239,7 @@ body.scrolled .brand-logo { display: none; }
 .menu-toggle span {
   width: 32px;
   height: 3px;
-  background: #f0e9da;
+  background: #ffffff;
   border-radius: 0;
   transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-origin: center;
@@ -339,7 +339,7 @@ body.menu-open .menu-toggle span:nth-child(3) {
   top: 0;
   width: 400px;
   height: 100vh;
-  background: #f0e9da;
+  background: #fff;
   z-index: 2000;
   transition: left 0.4s ease;
   overflow-y: auto;
@@ -469,7 +469,7 @@ body.menu-open .menu-close {
 }
 
 .menu-link:hover {
-  background: #f0e9da;
+  background: #ffffff;
   color: #000;
   border-left-color: #000;
 }
@@ -889,7 +889,7 @@ nav a:hover {
 
 /* Einzelnes Icon - weißer Hintergrund, runde Ecken, Schatten */
 .icon {
-  background: #f0e9da; /* Cremefarbiger Hintergrund - ändere für andere Farbe */
+  background: #fff; /* Weißer Hintergrund - ändere für andere Farbe */
   border-radius: 10px; /* Runde Ecken - ändere für mehr/weniger */
   padding: 20px; /* Padding innen - ändere für mehr/weniger */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Leichter Schatten - ändere für stärker/schwächer */
@@ -1362,7 +1362,7 @@ footer .container {
 
 /* Kontakt Header - bleibt am Seitenanfang (scrollt nicht mit) */
 .contact-header {
-  background: #f0e9da;
+  background: #fff;
   padding: 20px 30px;
   display: flex;
   align-items: center;
@@ -1397,7 +1397,7 @@ footer .container {
 /* Kontakt Main Section */
 .contact-page {
   padding: 60px 30px;
-  background: #f0e9da;
+  background: #fff;
   min-height: calc(100vh - 200px);
 }
 
@@ -1509,7 +1509,7 @@ body.contact-view .contact-nav {
   left: 0;
   right: 0;
   height: var(--scroll-bar-height);
-  background: #f0e9da;
+  background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
   z-index: 1190;
   transform: translateY(-100%);
@@ -1613,7 +1613,7 @@ body.privacy-view .privacy-nav {
   left: 0;
   right: 0;
   height: var(--privacy-scroll-bar-height, var(--scroll-bar-height));
-  background: #f0e9da;
+  background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
   z-index: 1190;
   transform: translateY(-100%);
@@ -1716,7 +1716,7 @@ body.privacy-view.privacy-scrolled .privacy-back-btn {
 
 /* Datenschutz Header - analog Kontakt */
 .privacy-header {
-  background: #f0e9da;
+  background: #fff;
   padding: 20px 30px;
   display: flex;
   align-items: center;
@@ -1756,7 +1756,7 @@ body.privacy-view.privacy-scrolled .privacy-back-btn {
 
 .privacy-page {
   padding: 50px 30px;
-  background: #f0e9da;
+  background: #fff;
   min-height: calc(100vh - 200px);
 }
 
