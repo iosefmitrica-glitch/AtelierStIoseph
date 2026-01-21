@@ -823,8 +823,11 @@
           showSlide(currentSlide);
         }
 
-        // Ändere Bild alle 5 Sekunden
-        setInterval(nextSlide, 5000);
+        // Zeige erstes Bild sofort
+        showSlide(0);
+        
+        // Ändere Bild alle 10 Sekunden
+        setInterval(nextSlide, 10000);
       })();
     </script>
   </body>
