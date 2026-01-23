@@ -94,6 +94,7 @@
   --hero-caption-left: 80px;
   --hero-caption-bottom: 100px;
   --hero-caption-font-weight: 600; /* Dicke der "Atelier St. Ioseph" Schrift (400=normal, 700=bold) */
+  --hero-caption-stroke: 0.5px; /* Dicke des Rands um Buchstaben (0 = kein Rand, 1px = dick) */
   
   /* Menu Abstand zwischen Links */
   --menu-link-spacing: 15px; /* Abstand zwischen Home, Über uns, Services, Galerie */
@@ -721,6 +722,8 @@ nav a:hover {
   letter-spacing: 0.5px;
   text-shadow:
     0 2px 4px rgba(0,0,0,0.7);
+  -webkit-text-stroke: var(--hero-caption-stroke, 0px) currentColor;
+  text-stroke: var(--hero-caption-stroke, 0px) currentColor;
 }
 
 .hero-caption.dark .hero-caption-title {
