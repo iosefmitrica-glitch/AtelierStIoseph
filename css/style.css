@@ -93,8 +93,8 @@
   --hero-bg-position: center 40%;
   --hero-caption-left: 80px;
   --hero-caption-bottom: 100px;
-  --hero-caption-font-weight: 600; /* Dicke der "Atelier St. Ioseph" Schrift (400=normal, 700=bold) */
-  --hero-caption-stroke: 0.5px; /* Dicke des Rands um Buchstaben (0 = kein Rand, 1px = dick) */
+  --hero-caption-font-weight: 1000; /* Dicke der "Atelier St. Ioseph" Schrift (400=normal, 700=bold) */
+  --hero-caption-stroke: 0.01px; /* Dicke des Rands um Buchstaben (0 = kein Rand, 1px = dick) */
   
   /* Menu Abstand zwischen Links */
   --menu-link-spacing: 15px; /* Abstand zwischen Home, Über uns, Services, Galerie */
@@ -716,9 +716,9 @@ nav a:hover {
 }
 
 .hero-caption-title {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(26px, 3vw, 40px);
-  font-weight: var(--hero-caption-font-weight, 600);
+  font-weight: var(--hero-caption-font-weight, 700);
   letter-spacing: 0.5px;
   text-shadow:
     0 2px 4px rgba(0,0,0,0.7);
