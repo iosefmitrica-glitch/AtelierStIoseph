@@ -625,9 +625,9 @@ nav a:hover {
   background-attachment: scroll;
   background-color: #000;
 
-  /* Vollständige Höhe des Fensters */
-  min-height: 100vh;
-  height: 100vh;
+  /* Vollständige Höhe des Fensters - per Variable anpassbar */
+  min-height: var(--hero-height, 90vh);
+  height: var(--hero-height, 90vh);
   width: 100%; /* 100% der Fensterbreite */
   
   /* Startet direkt von oben - keine weiße Leiste */
