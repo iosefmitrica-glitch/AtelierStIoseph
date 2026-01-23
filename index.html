@@ -808,6 +808,7 @@
         if (slides.length === 0) return;
         
         const brandLogo = document.querySelector('.brand-logo');
+        const heroCaption = document.querySelector('.hero-caption');
         let currentSlide = 0;
 
         function updateLogo(index) {
@@ -817,6 +818,9 @@
             } else {
               brandLogo.setAttribute('src', 'images/End_Logo_Transparent.png?v=' + Date.now());
             }
+          }
+          if (heroCaption) {
+            heroCaption.classList.toggle('dark', index !== 0);
           }
         }
 

@@ -709,6 +709,10 @@ nav a:hover {
   pointer-events: none;
 }
 
+.hero-caption.dark {
+  color: #000;
+}
+
 .hero-caption-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(26px, 3vw, 40px);
@@ -734,6 +738,16 @@ nav a:hover {
   text-shadow:
     0 1px 3px rgba(0,0,0,0.6),
     0 0 1px rgba(0,0,0,0.7);
+}
+
+.hero-caption.dark .hero-caption-link {
+  color: #000;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  text-shadow: none;
+}
+
+.hero-caption.dark .hero-caption-link::after {
+  opacity: 0.9;
 }
 
 .hero-caption-link::after {
