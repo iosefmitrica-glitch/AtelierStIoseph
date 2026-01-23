@@ -247,6 +247,9 @@ body.scrolled .brand-logo { display: none; }
   transform-origin: center;
   will-change: transform;
   backface-visibility: hidden;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.6),
+    0 0 1px rgba(0,0,0,0.7);
 }
 
 /* Über Mich Button (neben Menu) */
@@ -323,6 +326,9 @@ body.menu-open .menu-toggle span:nth-child(3) {
   letter-spacing: 0.5px;
   transition: opacity 0.2s ease;
   z-index: 21;
+  text-shadow:
+    0 1px 3px rgba(0,0,0,0.6),
+    0 0 1px rgba(0,0,0,0.7);
 }
 
 .contact-btn:hover { opacity: 0.7; }
