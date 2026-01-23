@@ -687,6 +687,71 @@ nav a:hover {
   z-index: 3;
 }
 
+/* Hero Caption unten links (Bang & Olufsen Stil) */
+.hero-caption {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  text-align: left;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-caption-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.45);
+}
+
+.hero-caption-link {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Ovo', serif;
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+  padding-bottom: 3px;
+  transition: opacity 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-caption-link::after {
+  content: '\f061';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.hero-caption-link:hover {
+  opacity: 0.8;
+  border-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hero-caption {
+    left: 20px;
+    bottom: 24px;
+    gap: 6px;
+  }
+
+  .hero-caption-title {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+
+  .hero-caption-link {
+    font-size: clamp(14px, 4vw, 17px);
+  }
+}
+
 /* Button im Hero - blauer Hintergrund, runde Ecken, Hover-Effekt. Call-to-Action Button. */
 .hero button {
   background: #007bff; /* Blauer Hintergrund - ändere zu #28a745 für grün. */
