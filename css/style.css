@@ -91,7 +91,7 @@
   /* Hero-Steuerung */
   --hero-height: 850px;
   --hero-bg-position: center 40%;
-  --hero-caption-left: 50px;
+  --hero-caption-left: 80px;
   --hero-caption-bottom: 100px;
   
   /* Menu Abstand zwischen Links */
@@ -723,6 +723,12 @@ nav a:hover {
     0 0 1px rgba(0,0,0,0.7);
 }
 
+.hero-caption.dark .hero-caption-title {
+  text-shadow:
+    0 1px 3px rgba(255,255,255,0.8),
+    0 0 1px rgba(255,255,255,0.9);
+}
+
 .hero-caption-link {
   pointer-events: auto;
   display: inline-flex;
@@ -743,7 +749,9 @@ nav a:hover {
 .hero-caption.dark .hero-caption-link {
   color: #000;
   border-bottom: 1px solid rgba(0,0,0,0.5);
-  text-shadow: none;
+  text-shadow:
+    0 1px 3px rgba(255,255,255,0.8),
+    0 0 1px rgba(255,255,255,0.9);
 }
 
 .hero-caption.dark .hero-caption-link::after {
