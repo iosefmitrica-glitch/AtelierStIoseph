@@ -35,8 +35,14 @@
     }
   </script>
   
-  <!-- Base Path für GitHub Pages -->
-  <base href="/AtelierStIoseph/">
+  <!-- Base Path dynamisch: GitHub Pages vs. lokal (Go Live) -->
+  <script>
+    (function() {
+      const base = document.createElement('base');
+      base.href = location.hostname.includes('github.io') ? '/AtelierStIoseph/' : '/';
+      document.head.appendChild(base);
+    })();
+  </script>
   
   <!-- Verlinkung zur CSS-Datei für das Styling -->
   <link rel="stylesheet" href="css/style.css">
