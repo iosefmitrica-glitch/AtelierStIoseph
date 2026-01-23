@@ -93,6 +93,7 @@
   --hero-bg-position: center 40%;
   --hero-caption-left: 80px;
   --hero-caption-bottom: 100px;
+  --hero-caption-font-weight: 600; /* Dicke der "Atelier St. Ioseph" Schrift (400=normal, 700=bold) */
   
   /* Menu Abstand zwischen Links */
   --menu-link-spacing: 15px; /* Abstand zwischen Home, Über uns, Services, Galerie */
@@ -716,7 +717,7 @@ nav a:hover {
 .hero-caption-title {
   font-family: 'Alex Brush', cursive;
   font-size: clamp(26px, 3vw, 40px);
-  font-weight: 600;
+  font-weight: var(--hero-caption-font-weight, 600);
   letter-spacing: 0.5px;
   text-shadow:
     0 2px 4px rgba(0,0,0,0.7);
