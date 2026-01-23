@@ -89,8 +89,10 @@
   --cta-y: 0px; /* Button nach oben/unten schieben */
 
   /* Hero-Steuerung */
-  --hero-height: 725px;
+  --hero-height: 850px;
   --hero-bg-position: center 40%;
+  --hero-caption-left: 40px;
+  --hero-caption-bottom: 40px;
   
   /* Menu Abstand zwischen Links */
   --menu-link-spacing: 15px; /* Abstand zwischen Home, Über uns, Services, Galerie */
@@ -626,8 +628,8 @@ nav a:hover {
   background-color: #000;
 
   /* Vollständige Höhe des Fensters - per Variable anpassbar */
-  min-height: var(--hero-height, 90vh);
-  height: var(--hero-height, 90vh);
+  min-height: var(--hero-height, 100vh);
+  height: var(--hero-height, 100vh);
   width: 100%; /* 100% der Fensterbreite */
   
   /* Startet direkt von oben - keine weiße Leiste */
@@ -690,8 +692,8 @@ nav a:hover {
 /* Hero Caption unten links (Bang & Olufsen Stil) */
 .hero-caption {
   position: absolute;
-  left: 40px;
-  bottom: 40px;
+  left: var(--hero-caption-left, 40px);
+  bottom: var(--hero-caption-bottom, 40px);
   display: flex;
   flex-direction: column;
   gap: 10px;
